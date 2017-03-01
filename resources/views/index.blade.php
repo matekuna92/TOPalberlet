@@ -1,4 +1,4 @@
-@include('header');
+
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -8,5 +8,5 @@
 </div>
 </div>
 
-@include('footer');
+
 
