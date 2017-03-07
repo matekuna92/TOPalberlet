@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/login', 'Auth\LoginController@guard');
+Route::get('/register', 'Auth\RegisterController@getRegister');

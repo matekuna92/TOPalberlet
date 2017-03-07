@@ -16,29 +16,21 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- JS -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
-    <!-- Bootstrap-->
-
-    <!-- Latest compiled and minified CSS
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-     NOT WORKING WITH CURRENT VERSION -->
 
     <!-- BX SLIDER -->
     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
@@ -72,9 +64,9 @@
                 </button>
                 <a class="navbar-brand" href="#">
                     <!-- SMALL SIZE LOGO -->
-                    <img class="img-responsive" src="images/logo-small.png" alt="logo">
+                    <img class="img-responsive homelogo" src="images/homeicon.png" alt="logo">
 
-                </a>
+                </a> <span class="hometext"> TOPalbérlet </span>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,12 +74,12 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <!-- section ID HREF -->
-                    <li><a href="#HOME" class="nav-item"> HOME </a></li>
-                    <li><a href="#ABOUT" class="nav-item"> ABOUT </a></li>
-                    <li><a href="#FEATURES" class="nav-item"> FEATURES </a></li>
-                    <li><a href="#SCREENS" class="nav-item"> SCREENS </a></li>
-                    <li><a href="#DOWNLOAD" class="nav-item"> DOWNLOAD </a></li>
-                    <li><a href="#CONTACT" class="nav-item"> CONTACT </a></li>
+                    <li><a href="/" class="nav-item"> KEZDŐLAP </a></li>
+                    <li><a href="/kereses" class="nav-item"> KERESÉS </a></li>
+                    <li><a href="/feltoltes" class="nav-item"> HIRDETÉS FELADÁS </a></li>
+                    <li><a href="/kedvencek" class="nav-item"> KEDVENCEK </a></li>
+                    <li><a href="/bejelentkezes" class="nav-item"> BEJELENTKEZÉS </a></li>
+                    <li><a href="/regisztracio" class="nav-item"> REGISZTRÁCIÓ </a></li>
 
                 </ul>
 
@@ -102,10 +94,6 @@
             <div class="row">
 
                 <div class="col-md-12">
-
-                    <div class="logo text-center">
-                        <img class="img-responsive" src="images/logo.png" alt="logo">
-                    </div>
 
                 </div>
 
