@@ -18,6 +18,27 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/bejelentkezes',function()
+{
+    return view('auth/login');
+});
 
-Route::get('/login', 'Auth\LoginController@guard');
-Route::get('/register', 'Auth\RegisterController@getRegister');
+Route::get('/regisztracio',function()
+{
+    return view('auth/register');
+});
+
+Route::get('/kereses',function()
+{
+    return view('search');
+});
+
+Route::get('/feltoltes',function()
+{
+    return view('upload');
+});
+
+Route::get('/kedvencek',function()
+{
+    return view('favourites');
+});

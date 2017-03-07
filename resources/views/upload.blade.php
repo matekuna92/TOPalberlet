@@ -1,11 +1,11 @@
 @extends('layouts.header')
 
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
 
 
 
 <body>
 
-    </body>
+</body>
 </html>
