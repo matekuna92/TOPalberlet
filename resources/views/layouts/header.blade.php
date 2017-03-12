@@ -22,10 +22,40 @@
                         <li><a href="/kereses" class="nav-item"> <i class="fa fa-search" aria-hidden="true"></i> KERESÉS </a></li>
                         <li><a href="/feltoltes" class="nav-item"> <i class="fa fa-upload" aria-hidden="true"></i> HIRDETÉS FELADÁS </a></li>
                         <li><a href="/kedvencek" class="nav-item"> <i class="fa fa-bookmark" aria-hidden="true"></i> KEDVENCEK </a></li>
+
                         <li><a href="/regisztracio" class="nav-item"> <i class="fa fa-user" aria-hidden="true"></i> REGISZTRÁCIÓ </a></li>
-                        <li><a href="/bejelentkezes" class="nav-item"> <i class="fa fa-key" aria-hidden="true"></i> BEJELENTKEZÉS </a></li>
 
+                        @if(Auth::guest())
 
+                            <li><a href="/bejelentkezes" class="nav-item"> <i class="fa fa-key" aria-hidden="true"></i> BEJELENTKEZÉS </a></li>
+
+                        @else
+
+                            <li class="dropdown">
+
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{Auth::user()->name}}
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li>
+
+                                        <a href="{{ url('/logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Kijelentkezés
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+
+                                    </li>
+                                </ul>
+
+                            </li>
+                        @endif
                     </ul>
 
                 </div><!-- /.navbar-collapse -->

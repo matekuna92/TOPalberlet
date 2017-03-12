@@ -83,6 +83,8 @@ ul
     margin-left:30px;
     padding: 20px 15px;
     border: 1px solid red;
+    float:left;
+
 }
 
 .main-right
@@ -90,3 +92,14 @@ ul
     border:1px solid orange;
     float:left;
 }
+
+.search-box .form-control
+{
+    width:80%;
+}
+
+form
+{
+    padding-left:15px;
+}
+
