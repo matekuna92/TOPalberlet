@@ -1,4 +1,6 @@
  <!-- HEADER SECTION -->
+ <header>
+
     <div class="header" id="HOME">
 
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -63,6 +65,6 @@
         </nav>
     </div>
 
-    </header>
+ </header>
 
 
