@@ -42,3 +42,5 @@ Route::get('/kedvencek',function()
 {
     return view('favourites');
 });
+
+Route::resource('/feltoltes','UsersUploadController');

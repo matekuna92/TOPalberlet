@@ -114,75 +114,90 @@
 
 @else
 
-    <form class="mart20" role="form" autocomplete="off" name="kereses" onsubmit="return checkform(this);" method="post" action="/kereses/">
-        <input type="hidden" name="post_type" value="kereses" id="post_type">
-        <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
-        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
-            <div class="form-group">
-                <label class="mar0">Kategória</label>
-                <select name="post_hirdetes_subcatid" id="post_hirdetes_subcatid" class="form-control szazp"><option value="4">Eladó lakás</option>
-                    <option value="5">Eladó ház</option>
-                    <option value="7">Eladó telek</option>
-                    <option value="6">Eladó nyaraló</option>
-                    <option value="14">Eladó garázs</option>
-                    <option value="16">Eladó kereskedelmi/ipari ingatlan</option>
-                    <option value="15">Eladó iroda</option>
-                    <option value="8">Eladó egyéb ingatlan</option>
-                    <option value="9">Kiadó lakás</option>
-                    <option value="10">Kiadó ház</option>
-                    <option value="11">Kiadó telek</option>
-                    <option value="19">Kiadó nyaraló, szálláshely</option>
-                    <option value="12">Kiadó garázs</option>
-                    <option value="18">Kiadó kereskedelmi/ipari ingatlan</option>
-                    <option value="17">Kiadó iroda</option>
-                    <option value="20">Kiadó egyéb ingatlan</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="mar0">Város</label>
-                <input type='hidden' value="" data-init-text='Kezdje begépelni a város nevét!' name='post_search_varos' id='post_search_varos' class="form-control"/>
-                <small class="color-grey">választhat több várost vagy kerületet is</small>
-            </div>
-            <div class="form-group">
-                <label class="mar0">Városrész</label>
-                <input type='hidden' value="" data-init-text='Kezdje begépelni a városrész nevét!' name='post_search_varosresz' id='post_search_varosresz' class="form-control"/>
-            </div>
-            <div class="form-group">
-                <label class="mar0">Utca</label>
-                <input type='hidden' value="" data-init-text='Kezdje begépelni a városrész nevét!' name='post_search_utca' id='post_search_utca' class="form-control"/>
-                <small class="color-grey">választhat több lehetőséget is</small>
-            </div>
-            <div class="form-group">
-                <label class="mar0">Ár</label>
-                <small>min - max</small>
-                <div id="price_elado" class="search_price">millió Ft</div>
-                <div id="price_kiado" class="search_price">ezer Ft</div>
-                <input name="price_m" type="text" class="form-control" id="price_m">
-            </div>
-            <div class="form-group">
-                <label class="mar0">Keresett kifejezés</label>
-                <input type="text" name="search" id="search" class="form-control" value="">
-            </div>
-            <div class="form-group">
-                <label class="mar0">Azonosító</label>
-                <input type="text" name="idtosearch" id="idtosearch" class="form-control irobot_id" value="">
-            </div>
-        </div>
-        <div class="hidden-xs col-sm-1 col-md-1 col-lg-1"></div>
-        <div class="hidden-xs col-sm-1 col-md-1 col-lg-1"></div>
-        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
-            <span id="wait_span" class="display-none "><img src="/img/loader-ajax2.gif.pagespeed.ce.K9y7PqguPF.gif" alt="Kérem várjon..." class="ajax-loader marb20"></span>
-            <span id="result_1" class="display-none"></span>
-            <div class="form-group">
-                <label class="mar0"><input type="checkbox" name="csak_fenykepek"> Csak fényképes hirdetés</label>
-            </div>
-            <div class="form-group">
-                <label class="mar0"></label>
-                <button type="submit" class="btn  btn-primary pull-right" id="kereses">Keresés</button>
-            </div>
-        </div>
-        <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
-    </form>
+    {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store','files'=>true]) !!}
+
+    <div class="form-group">
+        {!! Form::label('city','Varos:') !!}
+        {!! Form::text('city',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('street','Utca:') !!}
+        {!! Form::text('street',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('type','Típus') !!}
+        {!! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!}
+
+    </div>
+
+    <div class="form-group">
+        {!! Form::label(',','Kategória') !!}
+        {!! Form::select('category',[''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],
+        [''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],['class'=>'form-control']) !!}
+
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('price','Ár:') !!}
+        {!! Form::text('price',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('size','Alapterület:') !!}
+        {!! Form::text('size',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('rooms','Szobák száma:') !!}
+        {!! Form::text('rooms',null,['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('empty','Berendezés') !!}
+        {!! Form::select('empty',[''=>'Bútorozott','Bútorozatlan'], ['Bútorozott','Bútorozatlan'],['class'=>'form-control']) !!}
+
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('housetype','Lakás típusa') !!}
+        {!! Form::select('housetype',[''=>'Tégla','Panel'], ['Tégla','Panel'],['class'=>'form-control']) !!}
+
+    </div>
+
+    <div class="form-group">
+
+        {!! Form::label('heating','Fűtés') !!}
+        {!! Form::select('heating',[''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
+        'házközponti','hátközponti egyedi méréssel','cserépkályha'],
+        [''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
+        'házközponti','hátközponti egyedi méréssel','cserépkályha'],['class'=>'form-control']) !!}
+
+    </div>
+
+   <!-- <div class="form-group">
+        {! Form::label(','Category') !!}
+        {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
+    </div> -->
+
+    <div class="form-group">
+        {!! Form::label('photo_id','Photo') !!}
+        {!! Form::file('photo_id',['class'=>'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('body','Description') !!}
+        {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::submit('Create post',['class'=>'btn btn-primary']) !!}
+    </div>
+
+    {!! Form::close() !!}
+
+
 
 @endif
 
