@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersUploadController extends Controller
 {
@@ -38,7 +39,13 @@ class UsersUploadController extends Controller
     public function store(Request $request)
     {
         //
-        return "Stored!";
+       // return "Stored!";
+
+        $input = $request->all();
+        $user = Auth::user();
+        $user->houses()->create($input);
+        return redirect('/');
+
 
     }
 

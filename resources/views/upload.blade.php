@@ -114,88 +114,92 @@
 
 @else
 
-    {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store','files'=>true]) !!}
+    <div class="upload-form">
 
-    <div class="form-group">
-        {!! Form::label('city','Varos:') !!}
-        {!! Form::text('city',null,['class'=>'form-control']) !!}
+        {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store','files'=>true]) !!}
+
+        <div class="form-group">
+            {!! Form::label('city','Varos:') !!}
+            {!! Form::text('city',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('street','Utca:') !!}
+            {!! Form::text('street',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('type','Típus') !!}
+            {!! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!}
+
+        </div>
+
+        <div class="form-group">
+            {!! Form::label(',','Kategória') !!}
+            {!! Form::select('category',[''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],
+            [''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],['class'=>'form-control']) !!}
+
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('price','Ár:') !!}
+            {!! Form::text('price',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('size','Alapterület:') !!}
+            {!! Form::text('size',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('rooms','Szobák száma:') !!}
+            {!! Form::text('rooms',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('empty','Berendezés') !!}
+            {!! Form::select('empty',[''=>'Bútorozott','Bútorozatlan'], ['Bútorozott','Bútorozatlan'],['class'=>'form-control']) !!}
+
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('housetype','Lakás típusa') !!}
+            {!! Form::select('housetype',[''=>'Tégla','Panel'], ['Tégla','Panel'],['class'=>'form-control']) !!}
+
+        </div>
+
+        <div class="form-group">
+
+            {!! Form::label('heating','Fűtés') !!}
+            {!! Form::select('heating',[''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
+            'házközponti','hátközponti egyedi méréssel','cserépkályha'],
+            [''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
+            'házközponti','hátközponti egyedi méréssel','cserépkályha'],['class'=>'form-control']) !!}
+
+        </div>
+
+       <!-- <div class="form-group">
+            {! Form::label(','Category') !!}
+            {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
+        </div> -->
+
+        <div class="form-group">
+            {!! Form::label('photo_id','Photo') !!}
+            {!! Form::file('photo_id',['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('body','Description') !!}
+            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::submit('Create post',['class'=>'btn btn-primary']) !!}
+        </div>
+
+        {!! Form::close() !!}
+
     </div>
-
-    <div class="form-group">
-        {!! Form::label('street','Utca:') !!}
-        {!! Form::text('street',null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('type','Típus') !!}
-        {!! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!}
-
-    </div>
-
-    <div class="form-group">
-        {!! Form::label(',','Kategória') !!}
-        {!! Form::select('category',[''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],
-        [''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],['class'=>'form-control']) !!}
-
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('price','Ár:') !!}
-        {!! Form::text('price',null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('size','Alapterület:') !!}
-        {!! Form::text('size',null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('rooms','Szobák száma:') !!}
-        {!! Form::text('rooms',null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('empty','Berendezés') !!}
-        {!! Form::select('empty',[''=>'Bútorozott','Bútorozatlan'], ['Bútorozott','Bútorozatlan'],['class'=>'form-control']) !!}
-
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('housetype','Lakás típusa') !!}
-        {!! Form::select('housetype',[''=>'Tégla','Panel'], ['Tégla','Panel'],['class'=>'form-control']) !!}
-
-    </div>
-
-    <div class="form-group">
-
-        {!! Form::label('heating','Fűtés') !!}
-        {!! Form::select('heating',[''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
-        'házközponti','hátközponti egyedi méréssel','cserépkályha'],
-        [''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
-        'házközponti','hátközponti egyedi méréssel','cserépkályha'],['class'=>'form-control']) !!}
-
-    </div>
-
-   <!-- <div class="form-group">
-        {! Form::label(','Category') !!}
-        {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
-    </div> -->
-
-    <div class="form-group">
-        {!! Form::label('photo_id','Photo') !!}
-        {!! Form::file('photo_id',['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('body','Description') !!}
-        {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::submit('Create post',['class'=>'btn btn-primary']) !!}
-    </div>
-
-    {!! Form::close() !!}
 
 
 
