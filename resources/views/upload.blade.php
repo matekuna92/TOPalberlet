@@ -1,6 +1,6 @@
 @include('layouts.app')
 
-<!DOCTYPE html>
+        <!DOCTYPE html>
 
 <html>
 
@@ -43,7 +43,7 @@
 
     <div class="container">
 
-            <h1> Hirdetés feladásához be kell jelentkeznie ! </h1>
+        <h1> Hirdetés feladásához be kell jelentkeznie ! </h1>
 
     </div>
 
@@ -129,15 +129,28 @@
         </div>
 
         <div class="form-group">
+            <!-- {! Form::label('type','Típus') !!}
+             {! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!} -->
+
+            <!-- <select name="" id="" class="form-control">
+
+                 <b> Típus </b>
+
+                 <option value="Eladó"> Eladó </option>
+                 <option value="Kiadó"> Kiadó </option>
+
+             </select>
+         -->
             {!! Form::label('type','Típus') !!}
-            {!! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!}
+            {!! Form::select('type', ['0' => 'Kiadó', '1' => 'Eladó'], '0',['class'=>'form-control']) !!}
+
 
         </div>
 
         <div class="form-group">
-            {!! Form::label(',','Kategória') !!}
-            {!! Form::select('category',[''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],
-            [''=>'ház', 'lakás', 'garázs', 'telek', 'iroda'],['class'=>'form-control']) !!}
+            {!! Form::label('category','Kategória') !!}
+            {!! Form::select('category',['0'=>'ház', '1'=>'lakás', '2'=>'garázs', '3'=>'telek', '4'=>'iroda'],
+            '0', ['class'=>'form-control']) !!}
 
         </div>
 
@@ -158,30 +171,27 @@
 
         <div class="form-group">
             {!! Form::label('empty','Berendezés') !!}
-            {!! Form::select('empty',[''=>'Bútorozott','Bútorozatlan'], ['Bútorozott','Bútorozatlan'],['class'=>'form-control']) !!}
-
+            {!! Form::select('empty',['0'=>'Bútorozott','1'=>'Bútorozatlan'], '0', ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('housetype','Lakás típusa') !!}
-            {!! Form::select('housetype',[''=>'Tégla','Panel'], ['Tégla','Panel'],['class'=>'form-control']) !!}
-
+            {!! Form::select('housetype',['0'=>'Tégla','1'=>'Panel'], '0', ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
 
             {!! Form::label('heating','Fűtés') !!}
-            {!! Form::select('heating',[''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
-            'házközponti','hátközponti egyedi méréssel','cserépkályha'],
-            [''=>'cirko', 'gázkonvektor', 'távfűtés', 'távfűtés egyedi méréssel', 'elektromos',
-            'házközponti','hátközponti egyedi méréssel','cserépkályha'],['class'=>'form-control']) !!}
+            {!! Form::select('heating',['0'=>'cirko', '1'=>'gázkonvektor', '2'=>'távfűtés', '3'=>'távfűtés egyedi méréssel',
+             '4'=>'elektromos', '5'=>'házközponti','6'=>'hátközponti egyedi méréssel','7'=>'cserépkályha'], '0',
+            ['class'=>'form-control']) !!}
 
         </div>
 
-       <!-- <div class="form-group">
-            {! Form::label(','Category') !!}
-            {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
-        </div> -->
+        <!-- <div class="form-group">
+             {! Form::label(','Category') !!}
+             {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
+         </div> -->
 
         <div class="form-group">
             {!! Form::label('photo_id','Photo') !!}
@@ -194,7 +204,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Create post',['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Hirdetés feladása',['class'=>'btn btn-primary']) !!}
         </div>
 
         {!! Form::close() !!}
