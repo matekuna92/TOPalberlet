@@ -33,6 +33,9 @@
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
+    <!-- DropZone CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css">
+
 </head>
 
 <body>
@@ -114,9 +117,12 @@
 
 @else
 
+    <div class="container">
+
     <div class="upload-form">
 
-        {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store','files'=>true]) !!}
+        {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store',
+        'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
         <div class="form-group">
             {!! Form::label('city','Varos:') !!}
@@ -143,7 +149,6 @@
          -->
             {!! Form::label('type','Típus') !!}
             {!! Form::select('type', ['0' => 'Kiadó', '1' => 'Eladó'], '0',['class'=>'form-control']) !!}
-
 
         </div>
 
@@ -194,7 +199,7 @@
          </div> -->
 
         <div class="form-group">
-            {!! Form::label('photo_id','Photo') !!}
+            {!! Form::label('photo_id','Kép') !!}
             {!! Form::file('photo_id',['class'=>'form-control']) !!}
         </div>
 
@@ -211,11 +216,20 @@
 
     </div>
 
+    </div>
+
+   <!-- <div class="drop-zone">
+
+        {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
+        'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone']) !!}
+        {! Form::close() !!}
+    </div> -->
+
 
 
 @endif
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"> </script>
 
 
 

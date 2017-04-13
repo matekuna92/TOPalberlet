@@ -15,12 +15,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
-
-
-
-
-
-
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -44,6 +38,8 @@
 <body>
 
 @include('layouts.header')
+
+
 
 
 

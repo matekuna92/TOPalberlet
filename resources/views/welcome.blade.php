@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@include('layouts.app')
 
 <!DOCTYPE html>
 
@@ -128,6 +128,47 @@
     </div>
 
         <div class="col-md-7 main-right">
+
+            @foreach($houses as $house)
+
+            <!--    <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th> City </th>
+                        <th> Street </th>
+                        <th> Type </th>
+                        <th> Category </th>
+                        <th> Price </th>
+                        <th> Size </th>
+                        <th> Rooms </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td> {$house->city}} </td>
+                        <td>{$house->street}}</td>
+                        <td> {$house->type}}</td>
+                        <td> {$house->category}}</td>
+                        <td> {$house->price}}</td>
+                        <td> {$house->size}}</td>
+                        <td> {$house->rooms}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            -->
+
+                <div class="main-item">
+
+                    {{$house->city}}
+
+                </div>
+
+                @endforeach
+
+        </div>
+
 
 
 

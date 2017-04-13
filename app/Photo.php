@@ -10,9 +10,9 @@ class Photo extends Model
     protected $uploads = '/images';
     protected $fillable = ['file'];
 
-    public function posts()
+    public function houses()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsTo('App\House');
     }
 
 

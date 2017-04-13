@@ -11,36 +11,47 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/bejelentkezes',function()
+Route::group(['middleware' => 'web'], function()
 {
-    return view('auth/login');
+    // all routes.
+    Route::get('/', 'HomeController@index');
+    /*Route::get('/', function ()
+    {
+        return view('welcome');
+    }); ITT IS MEG VOLT ADVA RETURN VIEW, MEG A KONTROLLERBEN IS, EZÉRT NEM ISMERTE A HOUSES VÁLTOZÓT !!!!!!
+    Mivel az itt levő futott le alapértelmezettként.... A view-t a controllerben return-öljük !!!! */
+
+
+    Auth::routes();
+
+// Route::get('/home', 'HomeController@index');
+    Route::get('/bejelentkezes',function()
+    {
+        return view('auth/login');
+    });
+
+    Route::get('/regisztracio',function()
+    {
+        return view('auth/register');
+    });
+
+    Route::get('/kereses',function()
+    {
+        return view('search');
+    });
+
+    Route::get('/feltoltes',function()
+    {
+        return view('upload');
+    });
+
+    Route::get('/kedvencek',function()
+    {
+        return view('favourites');
+    });
+    Route::resource('/feltoltes','UsersUploadController');
 });
 
-Route::get('/regisztracio',function()
-{
-    return view('auth/register');
-});
 
-Route::get('/kereses',function()
-{
-    return view('search');
-});
 
-Route::get('/feltoltes',function()
-{
-    return view('upload');
-});
 
-Route::get('/kedvencek',function()
-{
-    return view('favourites');
-});
-
-Route::resource('/feltoltes','UsersUploadController');

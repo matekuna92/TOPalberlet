@@ -82,14 +82,14 @@ ul
 {
     margin-left:30px;
     padding: 20px 15px;
-    border: 1px solid red;
+    /*border: 1px solid red; */
     float:left;
 
 }
 
 .main-right
 {
-    border:1px solid orange;
+    /*border:1px solid orange; */
     float:left;
 }
 
@@ -108,4 +108,15 @@ form
     width:40%;
     padding: 15px 30px;
 }
+
+/* INDEX PAGE MAIN ITEMS */
+
+.main-item
+{
+    width: 500px;
+    height: 300px;
+    border: 3px solid blue;
+}
+
+
 

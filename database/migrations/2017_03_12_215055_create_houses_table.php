@@ -26,8 +26,7 @@ class CreateHousesTable extends Migration
             $table->string('empty');
             $table->string('housetype');
             $table->string('heating');
-
-            $table->integer('photo_id');
+            //$table->integer('photo_id')->unsigned()->index();
 
 
 

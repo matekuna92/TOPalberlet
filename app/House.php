@@ -15,12 +15,17 @@ class House extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'user_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating'
+        'id', 'user_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating', 'photo_id'
     ];
     //
 
+    public function photos()
+    {
+        return $this->hasMany('App/Photo');
+    }
+
     public function users()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsTo('App/User');
     }
 }
