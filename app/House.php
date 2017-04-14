@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Photo;
+use App\User;
 
 class House extends Model
 {
@@ -21,7 +23,7 @@ class House extends Model
 
     public function photos()
     {
-        return $this->hasMany('App/Photo');
+        return $this->belongsTo('App/Photo');
     }
 
     public function users()

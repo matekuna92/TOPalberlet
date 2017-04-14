@@ -161,7 +161,15 @@
 
                 <div class="main-item">
 
-                    {{$house->city}}
+                    <img src="images/homeicon.png">
+
+                    <h2 class="cityname"> {{$house->city}} </h2>
+                    <h4 class="street"> {{$house->street}} </h4>
+                    <h4 class="price"> {{$house->price}} Ft </h4>
+                    <h4 class="size"> {{$house->size}} m2</h4>
+                    <h4 class="rooms"> {{$house->rooms}} szoba </h4>
+
+                    {{$house->photo->file}}
 
                 </div>
 

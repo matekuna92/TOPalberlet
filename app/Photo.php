@@ -12,7 +12,7 @@ class Photo extends Model
 
     public function houses()
     {
-        return $this->belongsTo('App\House');
+        //return $this->belongsTo('App\House');
     }
 
 
