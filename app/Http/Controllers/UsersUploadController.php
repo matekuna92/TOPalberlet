@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Photo;
+use App\House;
 
 class UsersUploadController extends Controller
 {
@@ -55,10 +56,25 @@ class UsersUploadController extends Controller
         }
 
         return redirect('/');*/
+        /*$file = $request->file('photo_id');
+        dd($file); */
+
+        $input = $request->all();
+        $user = Auth::user(); // pulling out logged in user
+
+        if ($file = $request->file('photo_id'))
+        {
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id; // inserting photo id
+        }
+
+        $user->houses()->create($input);
+        return redirect('/');
 
 
-        $file = $request->file('photo_id');
-        dd($request->all());
+
 
     }
 

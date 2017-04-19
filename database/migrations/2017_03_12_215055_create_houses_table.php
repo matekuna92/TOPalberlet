@@ -16,6 +16,7 @@ class CreateHousesTable extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
+            $table->integer('photo_id')->unsigned()->index();
             $table->string('city');
             $table->string('street');
             $table->string('type');
@@ -26,7 +27,6 @@ class CreateHousesTable extends Migration
             $table->string('empty');
             $table->string('housetype');
             $table->string('heating');
-            $table->integer('photo_id')->unsigned()->index();
             $table->timestamps();
         });
     }

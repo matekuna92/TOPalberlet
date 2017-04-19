@@ -15,7 +15,7 @@ class AddPhotoIdToHouses extends Migration
     {
         Schema::table('houses', function (Blueprint $table) {
             //
-            $table->string('photo_id');
+            $table->integer('photo_id');
         });
     }
 

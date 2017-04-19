@@ -169,7 +169,7 @@
                     <h4 class="size"> {{$house->size}} m2</h4>
                     <h4 class="rooms"> {{$house->rooms}} szoba </h4>
 
-                    {{$house->photo->file}}
+
 
                 </div>
 
