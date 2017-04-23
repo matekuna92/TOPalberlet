@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -32,8 +33,8 @@ class User extends Authenticatable
         return $this->hasMany('App\House');
     }
 
-    public function posts()
+    /*public function photos()
     {
-        return $this->hasMany('App\Post');
-    }
+        return $this->hasMany('App\Photo');
+    }*/
 }

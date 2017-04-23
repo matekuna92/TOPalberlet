@@ -11,18 +11,19 @@
 |
 */
 
-Route::group(['middleware' => 'web'], function()
-{
+//Auth::routes();
+
+/*Route::group(['middleware' => 'web'], function()
+{*/
+    Route::auth();
+
     // all routes.
     Route::get('/', 'HomeController@index');
     /*Route::get('/', function ()
     {
         return view('welcome');
-    }); ITT IS MEG VOLT ADVA RETURN VIEW, MEG A KONTROLLERBEN IS, EZÉRT NEM ISMERTE A HOUSES VÁLTOZÓT !!!!!!
+    }); /*ITT IS MEG VOLT ADVA RETURN VIEW, MEG A KONTROLLERBEN IS, EZÉRT NEM ISMERTE A HOUSES VÁLTOZÓT !!!!!!
     Mivel az itt levő futott le alapértelmezettként.... A view-t a controllerben return-öljük !!!! */
-
-
-    Auth::routes();
 
 // Route::get('/home', 'HomeController@index');
     Route::get('/bejelentkezes',function()
@@ -50,7 +51,7 @@ Route::group(['middleware' => 'web'], function()
         return view('favourites');
     });
     Route::resource('/feltoltes','UsersUploadController');
-});
+
 
 
 

@@ -40,25 +40,6 @@ class UsersUploadController extends Controller
      */
     public function store(Request $request)
     {
-        //
-       // return "Stored!";
-
-       /* $input = $request->all();
-        $user = Auth::user();
-        $user->houses()->create($input);
-
-       /* if ($file = $request->file('photo_id'))
-        {
-            $name = time() . $file->getClientOriginalName();
-            $file->move('images', $name);
-            $photo = Photo::create(['file' => $name]);
-            $input['photo_id'] = $photo->id;
-        }
-
-        return redirect('/');*/
-        /*$file = $request->file('photo_id');
-        dd($file); */
-
         $input = $request->all();
         $user = Auth::user(); // pulling out logged in user
 
@@ -72,10 +53,6 @@ class UsersUploadController extends Controller
 
         $user->houses()->create($input);
         return redirect('/');
-
-
-
-
     }
 
     /**

@@ -8,22 +8,19 @@ use App\User;
 
 class House extends Model
 {
-
-
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id', 'user_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating', 'photo_id'
+        'id', 'user_id', 'photo_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating',
     ];
     //
 
     public function photos()
     {
-        return $this->belongsTo('App/Photo');
+        return $this->hasMany('App/Photo');
     }
 
     public function users()

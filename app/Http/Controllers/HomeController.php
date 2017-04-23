@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use App\House;
+use App\Photo;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -15,7 +19,12 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $houses = House::all();
+        //$houses = House::all();
+
+        //$user = User::all();
+        //$houses = House::paginate(12);
+       // $photo = $houses->photo;
+        $houses = House::paginate(12);
         return view('welcome',compact('houses'));
     }
 
