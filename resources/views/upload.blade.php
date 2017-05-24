@@ -119,22 +119,24 @@
 
     <div class="container">
 
+        <h1> Hirdetés feladás </h1>
+
     <div class="upload-form">
 
         {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store',
         'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('city','Varos:') !!}
             {!! Form::text('city',null,['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('street','Utca:') !!}
             {!! Form::text('street',null,['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             <!-- {! Form::label('type','Típus') !!}
              {! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!} -->
 
@@ -152,39 +154,39 @@
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('category','Kategória') !!}
             {!! Form::select('category',['0'=>'ház', '1'=>'lakás', '2'=>'garázs', '3'=>'telek', '4'=>'iroda'],
             '0', ['class'=>'form-control']) !!}
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('price','Ár:') !!}
             {!! Form::text('price',null,['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('size','Alapterület:') !!}
             {!! Form::text('size',null,['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('rooms','Szobák száma:') !!}
             {!! Form::text('rooms',null,['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('empty','Berendezés') !!}
             {!! Form::select('empty',['0'=>'Bútorozott','1'=>'Bútorozatlan'], '0', ['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-3">
             {!! Form::label('housetype','Lakás típusa') !!}
             {!! Form::select('housetype',['0'=>'Tégla','1'=>'Panel'], '0', ['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-xs-6">
 
             {!! Form::label('heating','Fűtés') !!}
             {!! Form::select('heating',['0'=>'cirko', '1'=>'gázkonvektor', '2'=>'távfűtés', '3'=>'távfűtés egyedi méréssel',
@@ -198,38 +200,64 @@
              {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
          </div> -->
 
-        <div class="form-group">
-            {!! Form::label('photo_id','Kép') !!}
-            {!! Form::file('photo_id',['class'=>'form-control']) !!}
-        </div>
+         <!-- <div class="form-group">
+             {! Form::label('photo_id','Kép') !!}
+             {! Form::open(array('method'=>'POST','action'=>'UsersUploadController@ store', 'files'=>true),['class'=>'dropzone']) !!}
+             {! Form::file('images[]', array('multiple'=>true)) !!}
+        </div> -->
+
+
 
         <div class="form-group">
-            {!! Form::label('body','Description') !!}
+            {!! Form::label('body','Hirdetés szövege') !!}
             {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::submit('Hirdetés feladása',['class'=>'btn btn-primary']) !!}
         </div>
 
         {!! Form::close() !!}
 
-    </div>
+       <!-- {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
+        'files' => true, 'enctype' => 'multipart/form-data']) !!}
+        {! Form::close() !!} -->
 
-    </div>
-
-   <!-- <div class="drop-zone">
-
-        {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
+        {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store',
         'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone']) !!}
-        {! Form::close() !!}
-    </div> -->
+
+     <!--   <div class="drop-zone">
+
+
+            {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
+            'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone']) !!}
+
+            </div> -->
+
+            <div class="clear"></div>
+            <div class="clear"></div>
+
+            <div class="form-group">
+                {!! Form::submit('Hirdetés feladása',['class'=>'btn btn-primary']) !!}
+            </div>
+
+
+
+    </div>
+
+    </div>
+
+
 
 
 
 @endif
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js">
+
+
+
+
+
+
+
+</script>
 
 
 

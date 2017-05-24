@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Photo;
 use App\House;
+//use Illuminate\Support\Facades\Request;
+
 
 class UsersUploadController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -40,20 +43,58 @@ class UsersUploadController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
+       // if(Request::ajax()) { // Becuase you are uploading with ajax / dropzone
+            $file = $request->file('file');
+            $filename = $file->getClientOriginalName();
+            dd($filename);
+
+           // $destinationPath = '/images';
+
+           // $upload_success = Input::file('file')->move($destinationPath, $filename);
+           // if ($upload_success) {
+          //      return Response::json('success', 200);
+           // } else {
+            //    return Response::json('error', 400);
+
+           // }
+    }
+
+        /*****************
+         $input = $request->all();
         $user = Auth::user(); // pulling out logged in user
 
         if ($file = $request->file('photo_id'))
         {
             $name = time() . $file->getClientOriginalName();
-            $file->move('images', $name);
+            $file->move('resources/images', $name);
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id; // inserting photo id
         }
 
         $user->houses()->create($input);
         return redirect('/');
-    }
+         ***********************
+         */
+
+        /*foreach($files as $file)
+        {
+            $file->name = time() . $file->getClientOriginalName();
+            $file->move('images', name);
+
+        }
+        endforeach */
+
+       // $user = Auth::user();
+        // $house = House::create($request->all());
+        /*foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos');
+            ProductsPhoto::create([
+                'product_id' => $product->id,
+                'filename' => $filename
+            ]);
+        }
+        return 'Upload successful!';*/
+
 
     /**
      * Display the specified resource.
@@ -63,7 +104,7 @@ class UsersUploadController extends Controller
      */
     public function show($id)
     {
-        //
+    //
     }
 
     /**
