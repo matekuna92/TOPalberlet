@@ -161,15 +161,17 @@
                 </table>
             -->
 
-                <div class="main-item" style="background-image: url({{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}})">
+                <div class="main-item" style="background-image: url({{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}});background-size:contain;">
 
                     <h3 class="cityname"> {{$post->city}} </h3>
-                    <h5 class="street"> {{$post->street}} </h5>
-                    <h5 class="price"> {{$post->price}} Ft </h5>
-                    <h5 class="size"> {{$post->size}} m2</h5>
-                    <h5 class="rooms"> {{$post->rooms}} szoba </h5>
-                    <img src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}">
-                    <input id="addButton" type="button" value="Kedvencekhez adás">
+                    <h4 class="street"> {{$post->street}} </h4>
+                    <h4 class="price"> {{$post->price}} Ft </h4>
+                    <h4 class="size"> {{$post->size}} m2</h4>
+                    <h4 class="rooms"> {{$post->rooms}} szoba </h4>
+                    <h5 class="date"> Hirdetés dátuma: {{$post->created_at}}</h5>
+
+                    <!-- <img src="{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}"> -->
+                    <!-- <input id="addButton" type="button" value="Kedvencekhez adás"> -->
 
                 </div>
 
