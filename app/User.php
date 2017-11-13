@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','house_id','post_id',
+        'name', 'email', 'password','photo_id'
     ];
 
     /**
@@ -28,13 +28,35 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function houses()
+    public function photo()
     {
-        return $this->hasMany('App\House');
+        return $this->belongsTo('App\Photo');
     }
 
-    /*public function photos()
+    public function posts()
     {
-        return $this->hasMany('App\Photo');
-    }*/
+        return $this->hasMany('App\Post');
+    }
+
+    /* Példa mutatorra, azonban nem használjuk */
+
+    //    public function setPasswordAttribute($password){
+//
+//
+//        if(!empty($password)){
+//
+//
+//            $this->attributes['password'] = bcrypt($password);
+//
+//
+//        }
+//
+//
+//        $this->attributes['password'] = $password;
+//
+//
+//
+//
+//    }
+
 }

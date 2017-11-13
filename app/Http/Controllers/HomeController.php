@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-use App\House;
+use App\Post;
 use App\Photo;
 use App\User;
 
@@ -24,8 +24,8 @@ class HomeController extends Controller
         //$user = User::all();
         //$houses = House::paginate(12);
        // $photo = $houses->photo;
-        $houses = House::paginate(12);
-        return view('welcome',compact('houses'));
+        $posts = Post::paginate(12);
+        return view('welcome',compact('posts','photos','users'));
     }
 
     /**

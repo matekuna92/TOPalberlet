@@ -15,10 +15,22 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('photo_id');
-            $table->integer('house_id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('photo_id')->unsigned()->index();;
+            $table->string('city');
+            $table->string('street');
+            $table->string('type');
+            $table->string('category');
+            $table->integer('price')->unsigned()->index();
+            $table->integer('size')->unsigned()->index();
+            $table->integer('rooms')->unsigned()->index();
+            $table->string('empty');
+            $table->string('housetype');
+            $table->string('heating');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // delete-nél a user_id lesz a kulcs, és ezt párosítjuk össze az post id-vel ....
         });
     }
 

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Photo;
-use App\House;
+use App\Post;
+use App\User;
 //use Illuminate\Support\Facades\Request;
 
 
@@ -44,10 +45,18 @@ class UsersUploadController extends Controller
     public function store(Request $request)
     {
        // if(Request::ajax()) { // Becuase you are uploading with ajax / dropzone
-            $file = $request->file('file');
-            $filename = $file->getClientOriginalName();
-            dd($filename);
+            $input = $request->all();
+            $user = Auth::user();
+            if ($file = $request->file('photo_id'))
+            {
+                $name = $file->getClientOriginalName();
+                $file->move('images', $name);
+                $photo = Photo::create(['file'=>$name]);
+                $input['photo_id'] = $photo->id; // inserting photo id
+            }
 
+            $user->posts()->create($input);
+            return redirect('/');
            // $destinationPath = '/images';
 
            // $upload_success = Input::file('file')->move($destinationPath, $filename);

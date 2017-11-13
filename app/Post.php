@@ -2,25 +2,46 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+    use Sluggable;
+    use SluggableScopeHelpers;
 
-    public function photos()
+     protected $sluggable = [
+    'build_from' => 'title',
+    'save_to' => 'slug',
+    'on_update' => true,
+     ];     // grab title every time i save it, and save it to SLUG column
+            // alapból update esetén nem működik, ezért kell az on_update true */
+
+    protected $fillable = [
+         'photo_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating',
+    //'id', 'user_id',
+    ];
+
+    public function sluggable()
     {
-        return $this->hasMany('App/Photo');
+        return [
+            'slug' => [
+                'source' => 'title' // title oszlopból pullolja az urlt...  ezt tárolja a slug-column ben
+            ]
+        ];
     }
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App/User');
     }
 
-    public function houses()
+    public function photo()
     {
-        return $this->hasMany('App/House');
+        return $this->belongsTo('App\Photo');
     }
 
 

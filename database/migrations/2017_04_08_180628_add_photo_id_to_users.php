@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPhotoIdToHouses extends Migration
+class AddPhotoIdToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddPhotoIdToHouses extends Migration
      */
     public function up()
     {
-        Schema::table('houses', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('photo_id');
+            $table->string('photo_id')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddPhotoIdToHouses extends Migration
      */
     public function down()
     {
-        Schema::table('houses', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
             $table->dropColumn('photo_id'); // User-hez lesz egy kép is a form-ban ami nem lesz required !
         });

@@ -127,7 +127,7 @@
         'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
         <div class="form-group col-xs-3">
-            {!! Form::label('city','Varos:') !!}
+            {!! Form::label('city','Város:') !!}
             {!! Form::text('city',null,['class'=>'form-control']) !!}
         </div>
 
@@ -194,8 +194,40 @@
             ['class'=>'form-control']) !!}
 
         </div>
+        <br><br>
 
-        <!-- <div class="form-group">
+        <div class="form-group">
+            {!! Form::label('body','Hirdetés szövege') !!}
+            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
+        </div>
+
+        <div class="clear"></div>
+        <div class="clear"></div>
+
+        <div class="form-group">
+            {!! Form::label('photo_id','Kép feltöltése') !!}
+            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::submit('Hirdetés feladása',['class'=>'btn btn-primary']) !!}
+        </div>
+
+    {!! Form::close() !!}
+
+    </div>
+    </div>
+
+@endif
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js">
+</script>
+
+</body>
+</html>
+
+
+<!-- <div class="form-group">
              {! Form::label(','Category') !!}
              {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
          </div> -->
@@ -208,19 +240,14 @@
 
 
 
-        <div class="form-group">
-            {!! Form::label('body','Hirdetés szövege') !!}
-            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
-        </div>
 
-        {!! Form::close() !!}
 
        <!-- {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
         'files' => true, 'enctype' => 'multipart/form-data']) !!}
         {! Form::close() !!} -->
 
-        {!! Form::open(['method'=>'post', 'action'=>'UsersUploadController@store',
-        'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone']) !!}
+     <!-- ------   {! Form::open(['method'=>'post', 'action'=>'UsersUploadControllerstore',
+        'files' => true, 'enctype' => 'multipart/form-data']) !!} -------- -->
 
      <!--   <div class="drop-zone">
 
@@ -230,37 +257,4 @@
 
             </div> -->
 
-            <div class="clear"></div>
-            <div class="clear"></div>
 
-            <div class="form-group">
-                {!! Form::submit('Hirdetés feladása',['class'=>'btn btn-primary']) !!}
-            </div>
-
-
-
-    </div>
-
-    </div>
-
-
-
-
-
-@endif
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js">
-
-
-
-
-
-
-
-</script>
-
-
-
-
-</body>
-</html>
