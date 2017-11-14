@@ -216,7 +216,28 @@
     {!! Form::close() !!}
 
     </div>
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+    @endif
+
+    <!--    <div class="row">
+            <!-- DISPLAYING ERRORS
+
+            if($errors)
+                    <div class="error alert-danger"> Kérjük minden mezőt töltsön ki! </div>
+            endif
+        </div>  -->
+
     </div>
+    </div>
+</div>
 
 @endif
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateUploadRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Photo;
@@ -42,7 +43,7 @@ class UsersUploadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidateUploadRequest $request)
     {
        // if(Request::ajax()) { // Becuase you are uploading with ajax / dropzone
             $input = $request->all();

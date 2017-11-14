@@ -50,6 +50,7 @@
     {
         return view('favourites');
     });
+
     Route::resource('/feltoltes','UsersUploadController');
 
 

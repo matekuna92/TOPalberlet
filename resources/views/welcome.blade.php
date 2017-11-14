@@ -71,7 +71,7 @@
 
                 <form>
 
-                    <div class="form-group">
+               <!--     <div class="form-group">
                         <label for="exampleSelect1"> Megye </label>
                         <select class="form-control" id="exampleSelect1">
                             <option> Megye 1 </option>
@@ -93,7 +93,11 @@
                             <option> Város 5 </option>
                         </select>
                     </div>
-
+                    -->
+                    <div class="form-group">
+                        <label for="City" class="City"> Város </label>
+                        <input class="form-control" id="City" rows="20">  </input>
+                    </div>
 
                     <div class="form-group">
 
@@ -112,13 +116,13 @@
                         <input class="form-control" id="MaxPrice" rows="3">  </input>
                     </div>
 
-                    <div class="form-check">
+               <!--     <div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input">
                             Check me out
                         </label>
                     </div>
-
+                -->
                     <button type="submit" class="btn btn-primary"> Keresés </button>
 
                     </div>
@@ -161,7 +165,7 @@
                 </table>
             -->
 
-                <div class="main-item" style="background-image: url({{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}});background-size:contain;">
+                <div class="main-item" style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:contain;">
 
                     <h3 class="cityname"> {{$post->city}} </h3>
                     <h4 class="street"> {{$post->street}} </h4>
@@ -187,7 +191,7 @@
     </div>
     <br>
 
-    Kép : <img height="50" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}">
+  <!--  Kép : <img height="50" src="{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}"> -->
 
 </div>
 
