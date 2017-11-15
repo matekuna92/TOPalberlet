@@ -38,4 +38,20 @@ class ValidateUploadRequest extends FormRequest
             'photo_id' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'city.required' => 'Kérem adja meg a város nevét!',
+            'street.required' => 'Kérem adja meg az utca nevét!',
+            'price.required' => 'Kérem adja meg az árat!',
+            'size.required' => 'Kérem adja meg az alapterületet!',
+            'rooms.required' => 'Kérem adja meg a szobák számát!',
+            'housetype.required' => 'Kérem adja meg a lakás típusát!',
+            'photo_id.required' => 'Kérem töltsön fel képet!'
+        ];
+    }
+
+            //'email.unique' => 'Email already taken m8',
+
 }
