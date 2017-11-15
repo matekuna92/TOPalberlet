@@ -94,7 +94,7 @@ return [
     */
 
     'custom' => [
-        'filled' => [
+        'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],

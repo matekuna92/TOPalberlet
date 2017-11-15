@@ -27,6 +27,7 @@ class CreatePostsTable extends Migration
             $table->string('empty');
             $table->string('housetype');
             $table->string('heating');
+            $table->string('body');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

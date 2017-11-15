@@ -21,7 +21,7 @@ class Post extends Model
             // alapból update esetén nem működik, ezért kell az on_update true */
 
     protected $fillable = [
-         'photo_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating',
+         'photo_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating','body'
     //'id', 'user_id',
     ];
 
