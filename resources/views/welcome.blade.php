@@ -15,34 +15,18 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
-    <!-- Latest compiled and minified CSS
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
--->
-
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-
+    <!-- Responsive -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-    <!-- BX SLIDER -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <script src="js/jquery-3.2.1.min.js"> </script>
 
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-
-    <!-- Responsive -->
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
 </head>
 
@@ -126,7 +110,8 @@
                     <h5 class="rooms"> {{$post->rooms}} szoba </h5>
                     <h5 class="date"> Hirdetés dátuma: {{$post->created_at}}</h5>
                     <!-- <input id="addButton" type="button" value="Kedvencekhez adás"> -->
-                    <td class="details"> <a href="{{route('home.post',$post->id)}}"> Megtekintés </a> </td>
+                    <td class="details"> <a href="{{route('home.post',$post->id)}}" class="detalisLink">
+                            <button class="detailsButton"> Részletek </button> </a> </td>
 
                 </div>
 
@@ -145,6 +130,24 @@
 
 
 @include('layouts.footer')
+
+<script>
+
+    /* Testing, if jQuery working after site loading */
+    /*$( document ).ready(function() {
+        console.log( "ready!" );
+    });*/
+
+    $( document ).ready(function()
+    {
+        $(".detalisButton").hover = function ()
+        {
+            $this.style.backgroundColor = "darkgrey"; /* Not working */
+        }
+    })
+
+
+</script>
 
 </body>
 </html>

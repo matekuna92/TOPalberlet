@@ -3,14 +3,17 @@
     margin:0;
     padding:0;
 }
-/*
-html
+
+/*html
 {
     background: url("../images/bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
 }*/
 
 body
@@ -25,14 +28,15 @@ p
     font-size:14px;
 }
 
-.header
+/*.header
 {
     background-image: url("../images/header-bg.jpg");
     background-repeat:no-repeat;
     background-attachment: fixed;
-    background-position: 15% 85%; /* "feljebb" csúsztatja a képet, a kép teteje az oldal alján volt */
+    background-position: 15% 85%; /* "feljebb" csúsztatja a képet, a kép teteje az oldal alján volt
     background-size:cover;
-}
+}*/
+
 
 
 .header-overlay
@@ -139,7 +143,6 @@ form
     margin: 10px 5px;
     float: left;
     border: 3px solid blue;
-    padding-left:10px;
     /*background-image: url("images/header-bg.jpg"); */
 }
 
@@ -161,6 +164,7 @@ h3,h4,h5
     color:white !important;
     font-weight:bold !important;
     font-family:"Times New Roman";
+    padding-left:10px;
 
 }
 
@@ -222,7 +226,30 @@ footer{
     background-color:lightgrey;
     padding:5px;
     font-family: "Times New Roman";
-    font-size: 25px;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+.detailsButton
+{
+    width:100% !important; /* A main-item div padding-left:10px miatt a bal széltől behúzva jelenik meg a
+    gomb is, mint a szövegek */
+    padding-left:0px !important;
+    border-radius:50px;
+    margin-bottom:0px;
+}
+
+.detailsButton:hover
+{
+    background-color: darkgrey;
+    color:white;
+}
+
+.detalisLink
+{
+    color:black;
+    font-weight: bold;
 }
 
 

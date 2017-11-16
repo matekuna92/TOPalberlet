@@ -225,28 +225,13 @@
 
     </div>
 
-
-
-    <!--    <div class="row">
-            <!-- DISPLAYING ERRORS
-
-            if($errors)
-                    <div class="error alert-danger"> Kérjük minden mezőt töltsön ki! </div>
-            endif
-        </div>  -->
-
     </div>
     </div>
 </div>
 
 @endif
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js">
-</script>
-
-
 @include('layouts.footer')
-
 </body>
 </html>
 
