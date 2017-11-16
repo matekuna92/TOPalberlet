@@ -65,7 +65,7 @@
 
     <div class="row">
 
-        <div class="col-md-3 main-left">
+        <div class="col-md-3 main-left" style="background-color: lightgrey;">
 
             <div class="search-box">
 
@@ -117,7 +117,7 @@
 
             @foreach($posts as $post)
 
-                <div class="main-item" style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:contain;">
+                <div class="main-item img-rounded" style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:contain;">
 
                     <h3 class="cityname"> {{$post->city}} </h3>
                     <h5 class="street"> {{$post->street}} </h5>
@@ -130,8 +130,6 @@
 
                 </div>
 
-
-
                 @endforeach
                 @endif
 
@@ -143,10 +141,10 @@
 
     <br>
 
-  <!--  Kép : <img height="50" src="{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}"> -->
-
 </div>
 
+
+@include('layouts.footer')
 
 </body>
 </html>

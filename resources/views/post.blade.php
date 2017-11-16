@@ -33,26 +33,49 @@
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-
 </head>
 
-<body>
+<div>
 
 @include('layouts.header')
 
 @section('content')
 
-    <h1> Post </h1>
+    <div class="container"">
 
-    <!-- Blog Post -->
+        <div class="mainframe">
 
-    <!-- Title -->
-    <h1> {{$post->city}} </h1>
+           <div class="imgframe" style="background-image: url({{$post->photo->file}});background-repeat:no-repeat;">
 
-    <!-- Author -->
-  <!--  <p class="lead">
-        by <a href="#"> {$post->user->name}} </a>
-    </p> -->
+           </div>
+
+            <div class="textframe">
+
+            <h5> {{$post->body}} </h5>
+            <h5> Város: {{$post->city}} </h5>
+
+            <ul class="list">
+
+                <li><h5> Utca: {{$post->street}} </h5></li>
+                <li><h5>  Típus: {{$post->type}} </h5></li>
+                <li><h5>  Kategória: {{$post->category}} </h5></li>
+                <li><h5>  Ár: {{$post->price}} Ft </h5></li>
+                <li><h5>  Méret: {{$post->size}} m2 </h5></li>
+                <li><h5>  Szobák száma: {{$post->rooms}} </h5></li>
+                <li><h5>  Bútorok: {{$post->empty}} </h5></li>
+                <li><h5>  Lakás típusa: {{$post->housetype}} </h5></li>
+                <li><h5>  Fűtés: {{$post->heating}} </h5></li>
+
+            </ul>
+            <!-- Feltöltő: <a href="#"> {$post->user()->name}} </a> -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>

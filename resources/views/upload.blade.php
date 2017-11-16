@@ -125,7 +125,7 @@
         </div>
     @endif
 
-    <div class="container">
+    <div class="container" style="background-color: lightgrey;">
 
         <h1> Hirdetés feladás </h1>
 
@@ -194,7 +194,7 @@
             {!! Form::select('housetype',['0'=>'Tégla','1'=>'Panel'], '0', ['class'=>'form-control']) !!}
         </div>
 
-        <div class="form-group col-xs-6">
+        <div class="form-group col-xs-3">
 
             {!! Form::label('heating','Fűtés') !!}
             {!! Form::select('heating',['0'=>'cirko', '1'=>'gázkonvektor', '2'=>'távfűtés', '3'=>'távfűtés egyedi méréssel',
@@ -204,9 +204,9 @@
         </div>
         <br><br>
 
-        <div class="form-group">
+        <div class="form-group col-xs-6">
             {!! Form::label('body','Hirdetés szövege') !!}
-            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
+            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>2]) !!}
         </div>
 
         <div class="clear"></div>
@@ -243,6 +243,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js">
 </script>
+
+
+@include('layouts.footer')
 
 </body>
 </html>

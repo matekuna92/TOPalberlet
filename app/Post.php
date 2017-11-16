@@ -8,6 +8,9 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
+use App\User;
+use App\Photo;
+
 class Post extends Model
 {
     use Sluggable;
