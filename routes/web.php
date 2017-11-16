@@ -19,6 +19,9 @@
 
     // all routes.
     Route::get('/', 'HomeController@index');
+    Route::post('/','HomeController@search');
+
+
     /*Route::get('/', function ()
     {
         return view('welcome');
@@ -52,6 +55,8 @@
     });
 
     Route::resource('/feltoltes','UsersUploadController');
+
+Route::get('/post/{id}',['as'=>'home.post','uses'=>'UsersUploadController@showPost']);
 
 
 

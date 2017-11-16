@@ -69,33 +69,13 @@
 
             <div class="search-box">
 
-                <form>
+                <form action="/" method="" id="searchForm">
 
-               <!--     <div class="form-group">
-                        <label for="exampleSelect1"> Megye </label>
-                        <select class="form-control" id="exampleSelect1">
-                            <option> Megye 1 </option>
-                            <option> Megye 2 </option>
-                            <option> Megye3 </option>
-                            <option> Megye 4 </option>
-                            <option> Megye 5 </option>
-                        </select>
-
-                    </div>
+                    <!-- SSRF protection -->
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
-                        <label for="exampleSelect2"> Város </label>
-                        <select multiple class="form-control" id="exampleSelect2">
-                            <option> Város 1 </option>
-                            <option> Város 2 </option>
-                            <option> Város 3 </option>
-                            <option> Város 4 </option>
-                            <option> Város 5 </option>
-                        </select>
-                    </div>
-                    -->
-                    <div class="form-group">
-                        <label for="City" class="City"> Város </label>
+                        <label for="City" class="City" id="city"> Város </label>
                         <input class="form-control" id="City" rows="20">  </input>
                     </div>
 
@@ -137,45 +117,16 @@
 
             @foreach($posts as $post)
 
-            <!--    <table class="table">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th> City </th>
-                        <th> Street </th>
-                        <th> Type </th>
-                        <th> Category </th>
-                        <th> Price </th>
-                        <th> Size </th>
-                        <th> Rooms </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td> {$post->city}} </td>
-                        <td>{$post->street}}</td>
-                        <td> {$post->type}}</td>
-                        <td> {$post->category}}</td>
-                        <td> {$post->price}}</td>
-                        <td> {$post->size}}</td>
-                        <td> {$post->rooms}}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            -->
-
                 <div class="main-item" style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:contain;">
 
                     <h3 class="cityname"> {{$post->city}} </h3>
-                    <h4 class="street"> {{$post->street}} </h4>
-                    <h4 class="price"> {{$post->price}} Ft </h4>
-                    <h4 class="size"> {{$post->size}} m2</h4>
-                    <h4 class="rooms"> {{$post->rooms}} szoba </h4>
+                    <h5 class="street"> {{$post->street}} </h5>
+                    <h5 class="price"> {{$post->price}} Ft </h5>
+                    <h5 class="size"> {{$post->size}} m2</h5>
+                    <h5 class="rooms"> {{$post->rooms}} szoba </h5>
                     <h5 class="date"> Hirdetés dátuma: {{$post->created_at}}</h5>
-
-                    <!-- <img src="{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}"> -->
                     <!-- <input id="addButton" type="button" value="Kedvencekhez adás"> -->
+                    <td class="details"> <a href="{{route('home.post',$post->id)}}"> Megtekintés </a> </td>
 
                 </div>
 
@@ -189,6 +140,7 @@
         </div>
 
     </div>
+
     <br>
 
   <!--  Kép : <img height="50" src="{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}"> -->
@@ -196,15 +148,5 @@
 </div>
 
 
-
-
 </body>
-
-
-
-
-
-
-
-
 </html>

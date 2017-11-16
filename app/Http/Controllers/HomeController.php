@@ -94,4 +94,9 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function search()
+    {
+       echo "Search working";
+    }
 }

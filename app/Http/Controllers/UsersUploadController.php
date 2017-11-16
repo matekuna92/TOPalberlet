@@ -150,4 +150,11 @@ class UsersUploadController extends Controller
     {
         //
     }
+
+    public function showPost($id)
+    {
+        $post = Post::findOrFail($id);
+        // $comments = $post->comments()->whereIsActive(1)->get();
+        return view('post',compact('post','users'));
+    }
 }
