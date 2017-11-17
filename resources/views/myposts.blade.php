@@ -46,11 +46,11 @@
 
 <div class="container">
 
-    <h1> {{ auth()->user()->name }} feltöltései: </h1>
+    <h1> {{ $users->name }} feltöltései: </h1>
 
     <div class="posts">
 
-        @foreach(Auth::user()->posts as $post)
+        @foreach($users->posts as $post)
             <ul>
 
                 <li> <img src="{{$post->photo->file}}">   </li>

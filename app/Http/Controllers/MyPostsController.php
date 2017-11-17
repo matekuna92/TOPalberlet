@@ -8,6 +8,8 @@ use App\User;
 use App\Post;
 use App\Photo;
 use DB;
+//use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class MyPostsController extends Controller
 {
@@ -19,7 +21,7 @@ class MyPostsController extends Controller
     public function index()
     {
         //
-        //$posts = Post::with('users')->get();
+        $users = Auth::user();
         $posts = DB::table('posts')->where('user_id', auth()->id())->get();
         return view('myposts',compact('posts','photos','users'));
     }

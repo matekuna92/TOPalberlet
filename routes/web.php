@@ -20,6 +20,7 @@
     // all routes.
     Route::get('/', 'HomeController@index');
     Route::post('/','HomeController@search');
+    Route::get('/hirdeteseim', 'MyPostsController@index');
 
 
     /*Route::get('/', function ()
@@ -51,10 +52,10 @@
 
 //Route::resource('/hirdetesem', 'MyPostsController@index');i
 
-   Route::get('/hirdeteseim',function()
+   /*Route::get('/hirdeteseim',function()
     {
         return view('myposts');
-    });
+    });*/
 
     Route::resource('/feltoltes','UsersUploadController');
 
