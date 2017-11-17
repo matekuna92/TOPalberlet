@@ -49,14 +49,18 @@
         return view('upload');
     });
 
-    Route::get('/kedvencek',function()
+//Route::resource('/hirdetesem', 'MyPostsController@index');i
+
+   Route::get('/hirdeteseim',function()
     {
-        return view('favourites');
+        return view('myposts');
     });
 
     Route::resource('/feltoltes','UsersUploadController');
 
 Route::get('/post/{id}',['as'=>'home.post','uses'=>'UsersUploadController@showPost']);
+
+
 
 
 

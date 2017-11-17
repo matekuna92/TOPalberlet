@@ -1,6 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: M3talc0re
+ * Date: 2017. 11. 17.
+ * Time: 20:46
+ */
+?>
+
 @include('layouts.app')
 
-<!DOCTYPE html>
+        <!DOCTYPE html>
 
 <html>
 
@@ -19,26 +28,40 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-
+    <!-- Responsive -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-    <!-- BX SLIDER -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <script src="js/jquery-3.2.1.min.js"> </script>
 
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-
-    <!-- Responsive -->
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
 </head>
+
 
 <body>
 
 @include('layouts.header')
 
+<div class="container">
+
+    <h1> {{ auth()->user()->name }} feltöltései: </h1>
+
+    <div class="posts">
+
+        @foreach(Auth::user()->posts as $post)
+            <ul>
+
+                <li> <img src="{{$post->photo->file}}">   </li>
+
+            </ul>
+
+         @endforeach
+    </div>
+
+
+</div>
 
 </body>
 </html>

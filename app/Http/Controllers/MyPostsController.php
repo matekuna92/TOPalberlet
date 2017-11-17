@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use Illuminate\Support\Facades\Auth;
+use App\User;
 use App\Post;
 use App\Photo;
-use App\User;
+use DB;
 
-class HomeController extends Controller
+class MyPostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +18,9 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $posts = Post::orderBy('created_at', 'desc')->paginate(12);
-        return view('welcome',compact('posts','photos','users'));
+        //$posts = Post::with('users')->get();
+        $posts = DB::table('posts')->where('user_id', auth()->id())->get();
+        return view('myposts',compact('posts','photos','users'));
     }
 
     /**
@@ -53,7 +53,6 @@ class HomeController extends Controller
     public function show($id)
     {
         //
-
     }
 
     /**
@@ -88,10 +87,5 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search()
-    {
-       echo "Search working";
     }
 }

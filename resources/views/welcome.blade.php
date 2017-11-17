@@ -109,7 +109,7 @@
                     <h5 class="size"> {{$post->size}} m2</h5>
                     <h5 class="rooms"> {{$post->rooms}} szoba </h5>
                     <h5 class="date"> Hirdetés dátuma: {{$post->created_at}}</h5>
-                    <!-- <input id="addButton" type="button" value="Kedvencekhez adás"> -->
+
                     <td class="details"> <a href="{{route('home.post',$post->id)}}" class="detalisLink">
                             <button class="detailsButton"> Részletek </button> </a> </td>
 

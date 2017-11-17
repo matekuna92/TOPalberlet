@@ -7,9 +7,9 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
-
 use App\User;
 use App\Photo;
+use Illuminate\Http\Request;
 
 class Post extends Model
 {
@@ -46,6 +46,4 @@ class Post extends Model
     {
         return $this->belongsTo('App\Photo');
     }
-
-
 }

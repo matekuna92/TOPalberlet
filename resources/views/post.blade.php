@@ -20,15 +20,10 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
-
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
-    <!-- BX SLIDER -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
@@ -68,12 +63,11 @@
 
             </ul>
             <!-- Feltöltő: <a href="#"> {$post->user()->name}} </a> -->
-
             </div>
 
-        </div>
+            <a href="/"> <button class="backToMain"> Vissza a főoldalra </button> </a>
 
-    </div>
+        </div>
 
 </div>
 
