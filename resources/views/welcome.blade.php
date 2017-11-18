@@ -53,40 +53,33 @@
 
             <div class="search-box">
 
-                <form action="/" method="" id="searchForm">
+                <form action="/" method="POST" id="searchForm">
 
                     <!-- SSRF protection -->
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
-                        <label for="City" class="City" id="city"> Város </label>
-                        <input class="form-control" id="City" rows="20">  </input>
+                        <label for="city"> Város </label>
+                        <input class="form-control" id="city" name="city" rows="20">  </input>
                     </div>
 
                     <div class="form-group">
 
                         <label for="formGroupExampleInput2"> Ár </label>
                         <div class="input-narrow">
-                            <input class="form-control col-xs-4" id="formGroupExampleInput2" placeholder="Min" type="text">
+                            <input class="form-control col-xs-4" id="formGroupExampleInput2" placeholder="Min" name="minprice" type="text">
                         </div>
 
                         <div class="input-narrow">
-                        <input type="text" class="form-control col-xs-4" id="formGroupExampleInput2" placeholder="Max">
+                        <input type="text" class="form-control col-xs-4" id="formGroupExampleInput2" placeholder="Max" name="maxprice">
 
                     </div>
 
                     <div class="form-group">
                         <label for="MaxPrice" class="MaxPrice"> Max szobák száma </label>
-                        <input class="form-control" id="MaxPrice" rows="3">  </input>
+                        <input class="form-control" id="MaxPrice" name="maxrooms" rows="3">  </input>
                     </div>
 
-               <!--     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                            Check me out
-                        </label>
-                    </div>
-                -->
                     <button type="submit" class="btn btn-primary"> Keresés </button>
 
                     </div>
@@ -99,8 +92,8 @@
 
         @if($posts)
 
-            @foreach($posts as $post)
-
+            @foreach($posts as $post)       <!-- Többesszám a controller miatt, ott definiáltuk ezt a változót !
+                                            amely a Post modellt tartalmazza ... ugyanígy jártunk el a myposts oldalon is -->
                 <div class="main-item img-rounded" style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:contain;">
 
                     <h3 class="cityname"> {{$post->city}} </h3>

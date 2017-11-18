@@ -22,8 +22,11 @@ class MyPostsController extends Controller
     {
         //
         $users = Auth::user();
-        $posts = DB::table('posts')->where('user_id', auth()->id())->get();
+       // $posts = DB::table('posts')->where('user_id', auth()->id())->get(); így is működik !
+        $posts = $users->posts()->get();
         return view('myposts',compact('posts','photos','users'));
+
+        /* Át kell adni a változókat a view számára, különben undefined variable errort kapunk ! */
     }
 
     /**
@@ -79,6 +82,7 @@ class MyPostsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**

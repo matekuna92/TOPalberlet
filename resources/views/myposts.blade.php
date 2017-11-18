@@ -46,22 +46,32 @@
 
 <div class="container">
 
-    <h1> {{ $users->name }} feltöltései: </h1>
+    <h1 class="uploaderName"> <u><b> {{ $users->name }} </b> felhasználó feltöltései </u></h1>
 
     <div class="posts">
 
-        @foreach($users->posts as $post)
-            <ul>
+        @if($users->posts)          <!-- A $userst a kontrollerben definiáltuk ugyanúgy, mint a főoldalon, a posts pedig szintén a
+                                    definiált változót jelenti, amely egyébként is a posts() függvényt hívja meg a User modellből -->
+            @foreach($users->posts as $post)
+                <ul>
 
-                <li> <img src="{{$post->photo->file}}">   </li>
+                    <li class="main-item"> <img src="{{$post->photo->file}}">   </li>
 
-            </ul>
+                </ul>
 
-         @endforeach
+            @endforeach
+
+         @else
+
+            <h2> Ez a felhasználó még nem töltött fel hirdetéseket! </h2>
+
+         @endif
+
     </div>
 
-
 </div>
+
+@include('layouts.footer');
 
 </body>
 </html>

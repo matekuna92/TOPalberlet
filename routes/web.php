@@ -21,6 +21,7 @@
     Route::get('/', 'HomeController@index');
     Route::post('/','HomeController@search');
     Route::get('/hirdeteseim', 'MyPostsController@index');
+   // Route::get('/kereses','SearchController@search');
 
 
     /*Route::get('/', function ()
@@ -40,10 +41,10 @@
         return view('auth/register');
     });
 
-    Route::get('/kereses',function()
+    /* Route::get('/kereses',function()
     {
         return view('search');
-    });
+    }); */
 
     Route::get('/feltoltes',function()
     {
@@ -55,7 +56,7 @@
    /*Route::get('/hirdeteseim',function()
     {
         return view('myposts');
-    });*/
+    });     A fenti megvalósítás a helyes ! Controllerben térünk vissza view-val, nem itt ! */
 
     Route::resource('/feltoltes','UsersUploadController');
 

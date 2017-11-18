@@ -23,6 +23,25 @@ class HomeController extends Controller
         return view('welcome',compact('posts','photos','users'));
     }
 
+    public function search(Request $request)
+    {
+        $input = $request->all();
+        //$city = $request['city'];
+        $city = $input['city'];
+        $minprice = $input['minprice'];
+        $maxprice = $input['maxprice'];
+        $maxrooms = $input['maxrooms'];
+        print_r($city);
+
+        $posts = Post::orderBy('created_at', 'desc')
+            ->where('city','LIKE','%'.$city.'%')
+           // ->whereBetween('price', array($minprice, $maxprice))
+           // ->where('rooms','<=','maxrooms')
+            ->paginate(12);
+        return view('welcome',compact('posts','photos','users'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -88,10 +107,5 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function search()
-    {
-       echo "Search working";
     }
 }
