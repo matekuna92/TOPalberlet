@@ -23,20 +23,23 @@ class HomeController extends Controller
         return view('welcome',compact('posts','photos','users'));
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function search(Request $request)
     {
         $input = $request->all();
-        //$city = $request['city'];
-        $city = $input['city'];
+        $city = $input['city'];             /* TESZT: print_r($city); */
         $minprice = $input['minprice'];
         $maxprice = $input['maxprice'];
-        $maxrooms = $input['maxrooms'];
-        print_r($city);
+        $maxrooms = $input['maxrooms'];     // dd($minprice,$maxrooms); ok
 
         $posts = Post::orderBy('created_at', 'desc')
             ->where('city','LIKE','%'.$city.'%')
-           // ->whereBetween('price', array($minprice, $maxprice))
-           // ->where('rooms','<=','maxrooms')
+            ->where('price','>=',$minprice)
+            ->where('price','<=',$maxprice)
+            ->where('rooms','<=',$maxrooms)
             ->paginate(12);
         return view('welcome',compact('posts','photos','users'));
     }

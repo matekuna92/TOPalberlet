@@ -76,8 +76,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="MaxPrice" class="MaxPrice"> Max szobák száma </label>
-                        <input class="form-control" id="MaxPrice" name="maxrooms" rows="3">  </input>
+                        <label for="maxrooms" class="maxrooms"> Max szobák száma </label>
+                        <input class="form-control" id="maxrooms" name="maxrooms" rows="3">  </input>
                     </div>
 
                     <button type="submit" class="btn btn-primary"> Keresés </button>
