@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Photo;
 use App\User;
+use DB;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $posts = Post::orderBy('created_at', 'desc')->paginate(12);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(9);
         return view('welcome',compact('posts','photos','users'));
     }
 
@@ -30,19 +31,53 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $input = $request->all();
-        $city = $input['city'];             /* TESZT: print_r($city); */
+        $city = $input['city'];                     /* TESZT: print_r($city); */
         $minprice = $input['minprice'];
         $maxprice = $input['maxprice'];
-        $maxrooms = $input['maxrooms'];     // dd($minprice,$maxrooms); ok
+        $maxrooms = $input['maxrooms'];             // dd($minprice,$maxrooms); ok
 
         $posts = Post::orderBy('created_at', 'desc')
             ->where('city','LIKE','%'.$city.'%')
             ->where('price','>=',$minprice)
             ->where('price','<=',$maxprice)
             ->where('rooms','<=',$maxrooms)
-            ->paginate(12);
+            ->paginate(9);
+
         return view('welcome',compact('posts','photos','users'));
+
+        /*$input = $request->all();
+        $city = $input['city'];
+        $posts = DB::table('posts')
+            ->when($city,function($query) use ($city)
+            {
+                return $query->where('city',$city);
+            })
+            ->get()->paginate(12);*/
+
+
+
+       /*$posts = DB::table('posts')
+            ->where(function($query) use ($city,$minprice,$maxprice,$maxrooms)
+            {
+                if($city)
+                    $query->where('city','LIKE','%'.$city.'%');
+                if($minprice)
+                    $query->where('price','>=',$minprice);
+                if($maxprice)
+                    $query->where('price','<=',$maxprice);
+                if($maxrooms)
+                    $query->where('rooms','<=',$maxrooms);
+            })->orderBy('created_at','desc')->paginate(12);*/
+
     }
+
+        /*$query = DB::table('posts');
+        $query->where('city','LIKE','%'.$city.'%');
+        if($minprice) $query->where('price','>=',$minprice);
+        if($maxprice) $query->where('price','<=',$maxprice);
+        if($maxrooms) $query->where('rooms','<=',$maxrooms);*/
+
+
 
 
     /**

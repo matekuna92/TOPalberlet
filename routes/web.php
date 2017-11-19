@@ -60,7 +60,10 @@
 
     Route::resource('/feltoltes','UsersUploadController');
 
-Route::get('/post/{id}',['as'=>'home.post','uses'=>'UsersUploadController@showPost']);
+Route::get('/post/{id}',['as'=>'post','uses'=>'UsersUploadController@showPost']);
+
+Route::get('/post/{id}/edit',['as'=>'edit','uses'=>'MyPostsController@edit']);
+
 
 
 

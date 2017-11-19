@@ -53,14 +53,15 @@
 
             <div class="search-box">
 
-                <form action="/" method="POST" id="searchForm">
+                <!-- <form action="/" method="POST" id="searchForm"> using laravel style form below -->
+            {!! Form::open(['url' => '/', 'method' => 'POST','id'=>'searchForm']) !!}
 
                     <!-- SSRF protection -->
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
                         <label for="city"> Város </label>
-                        <input class="form-control" id="city" name="city" rows="20">  </input>
+                        <input class="form-control" id="city" name="city" rows="20" placeholder="Város">  </input>
                     </div>
 
                     <div class="form-group">
@@ -72,19 +73,21 @@
 
                         <div class="input-narrow">
                         <input type="text" class="form-control col-xs-4" id="formGroupExampleInput2" placeholder="Max" name="maxprice">
-
-                    </div>
+                        </div>
 
                     <div class="form-group">
                         <label for="maxrooms" class="maxrooms"> Max szobák száma </label>
-                        <input class="form-control" id="maxrooms" name="maxrooms" rows="3">  </input>
+                        <input class="form-control" id="maxrooms" name="maxrooms" rows="3" placeholder="Max. szobák száma">  </input>
                     </div>
 
                     <button type="submit" class="btn btn-primary"> Keresés </button>
 
                     </div>
-                </form>
-        </div>
+
+               {!! Form::close() !!}
+              <!--  </form> -->
+
+            </div>
 
     </div>
 
@@ -94,7 +97,7 @@
 
             @foreach($posts as $post)       <!-- Többesszám a controller miatt, ott definiáltuk ezt a változót !
                                             amely a Post modellt tartalmazza ... ugyanígy jártunk el a myposts oldalon is -->
-                <div class="main-item img-rounded" style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:contain;">
+                <div class="main-item img-rounded"  style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:cover;">
 
                     <h3 class="cityname"> {{$post->city}} </h3>
                     <h5 class="street"> {{$post->street}} </h5>
@@ -103,7 +106,7 @@
                     <h5 class="rooms"> {{$post->rooms}} szoba </h5>
                     <h5 class="date"> Hirdetés dátuma: {{$post->created_at}}</h5>
 
-                    <td class="details"> <a href="{{route('home.post',$post->id)}}" class="detalisLink">
+                    <td class="details"> <a href="{{route('post',$post->id)}}" class="detalisLink">
                             <button class="detailsButton"> Részletek </button> </a> </td>
 
                 </div>

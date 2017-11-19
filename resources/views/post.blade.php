@@ -30,13 +30,13 @@
 
 </head>
 
-<div>
-
 @include('layouts.header')
 
 @section('content')
 
-    <div class="container"">
+    <div class="container">
+
+        <h1> A hirdetés azonosítója: {{$post->id}} </h1>
 
         <div class="mainframe">
 
@@ -66,10 +66,13 @@
             </div>
 
             <a href="/"> <button class="backToMain"> Vissza a főoldalra </button> </a>
+            <a href="/hirdeteseim"> <button class="backToMain"> Vissza a hirdetéseimhez </button> </a>
 
         </div>
 
 </div>
+
+        @include('layouts.footer')
 
 </body>
 </html>

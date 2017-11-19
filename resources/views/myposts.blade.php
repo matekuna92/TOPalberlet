@@ -36,42 +36,148 @@
 
     <script src="js/jquery-3.2.1.min.js"> </script>
 
-
 </head>
-
 
 <body>
 
 @include('layouts.header')
 
-<div class="container">
+@if(Auth::guest())
 
-    <h1 class="uploaderName"> <u><b> {{ $users->name }} </b> felhasználó feltöltései </u></h1>
+    <div class="container">
 
-    <div class="posts">
-
-        @if($users->posts)          <!-- A $userst a kontrollerben definiáltuk ugyanúgy, mint a főoldalon, a posts pedig szintén a
-                                    definiált változót jelenti, amely egyébként is a posts() függvényt hívja meg a User modellből -->
-            @foreach($users->posts as $post)
-                <ul>
-
-                    <li class="main-item"> <img src="{{$post->photo->file}}">   </li>
-
-                </ul>
-
-            @endforeach
-
-         @else
-
-            <h2> Ez a felhasználó még nem töltött fel hirdetéseket! </h2>
-
-         @endif
+        <h1> A saját hirdetések megtekintéséhez be kell jelentkeznie ! </h1>
 
     </div>
 
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"> Bejelentkezés </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                            {{ csrf_field() }}
 
-@include('layouts.footer');
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label"> E-mail </label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label"> Jelszó </label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> Emlékezz rám
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Bejelentkezés
+                                    </button>
+
+                                    <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                                        Elfelejtette a jelszót ?
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@else
+
+    <div class="container">
+
+        <h1 class="uploaderName"> <u><b> {{ $users->name }} </b> felhasználó feltöltései </u></h1> <br>
+
+    </div>
+
+    <div class="main-container">
+
+        <div class="row">
+
+            <div class="col-md-3 main-left"> <!-- helyfoglalás miatt üres div, posztok az md-7-ben lesznek -->
+
+            </div>
+
+            <div class="col-md-7 main-right"> <!-- főloldalhoz hasonló elrendezés -->
+
+                @if($users->posts)          <!-- A $userst a kontrollerben definiáltuk ugyanúgy, mint a főoldalon, a posts pedig szintén a
+                                        definiált változót jelenti, amely egyébként is a posts() függvényt hívja meg a User modellből -->
+                    @foreach($users->posts as $post)
+
+                        <div class="main-item img-rounded"  style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:cover;">
+
+                            <h3 class="cityname"> {{$post->city}} </h3>
+                            <h5 class="street"> {{$post->street}} </h5>
+                            <h5 class="price"> {{$post->price}} Ft </h5>
+                            <h5 class="size"> {{$post->size}} m2</h5>
+                            <h5 class="rooms"> {{$post->rooms}} szoba </h5>
+                            <h5 class="date"> Hirdetés dátuma: {{$post->created_at}}</h5>
+
+                            <td class="details"> <a href="{{route('post',$post->id)}}" class="detalisLink">
+                                    <button class="detailsButton float"> Részletek </button> </a> </td>
+                            <td class="editPost"> <a href="{{route('edit',$post->id)}}" class="detalisLink">
+                                    <button class="detailsButton float"> Szerkesztés </button> </a> </td>
+
+
+                        </div> <!-- eredetileg a div-en belül volt a foreach, úgy egymás alatt jelent meg a div-et nem nézve !!!-->
+                    @endforeach
+
+            </div>
+        </div>
+    </div>
+
+                @else
+
+                    <h2> Ez a felhasználó még nem töltött fel hirdetéseket! </h2>
+
+                @endif
+
+                        </div>
+
+             </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    @endif
+
+    @include('layouts.footer');
 
 </body>
 </html>

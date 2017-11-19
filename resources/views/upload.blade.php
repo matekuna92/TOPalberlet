@@ -145,27 +145,16 @@
         </div>
 
         <div class="form-group col-xs-3">
-            <!-- {! Form::label('type','Típus') !!}
-             {! Form::select('type',[''=>'Eladó','Kiadó'], ['Kiadó','Eladó'],['class'=>'form-control']) !!} -->
 
-            <!-- <select name="" id="" class="form-control">
-
-                 <b> Típus </b>
-
-                 <option value="Eladó"> Eladó </option>
-                 <option value="Kiadó"> Kiadó </option>
-
-             </select>
-         -->
             {!! Form::label('type','Típus') !!}
-            {!! Form::select('type', ['0' => 'Kiadó', '1' => 'Eladó'], '0',['class'=>'form-control']) !!}
+            {!! Form::select('type', ['kiadó' => 'Kiadó', 'eladó' => 'Eladó'], 'kiadó',['class'=>'form-control']) !!}
 
         </div>
 
-        <div class="form-group col-xs-3">
+        <div class="form-group col-xs-3">te
             {!! Form::label('category','Kategória') !!}
-            {!! Form::select('category',['0'=>'ház', '1'=>'lakás', '2'=>'garázs', '3'=>'telek', '4'=>'iroda'],
-            '0', ['class'=>'form-control']) !!}
+            {!! Form::select('category',['ház'=>'Ház', 'lakás'=>'Lakás', 'garázs'=>'Garázs', 'telek'=>'Telek', 'iroda'=>'Iroda'],
+            'ház', ['class'=>'form-control']) !!}
 
         </div>
 
@@ -186,12 +175,12 @@
 
         <div class="form-group col-xs-3">
             {!! Form::label('empty','Berendezés') !!}
-            {!! Form::select('empty',['0'=>'Bútorozott','1'=>'Bútorozatlan'], '0', ['class'=>'form-control']) !!}
+            {!! Form::select('empty',['bútorozott'=>'Bútorozott','bútorozatlan'=>'Bútorozatlan'], 'bútorozott', ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group col-xs-3">
             {!! Form::label('housetype','Lakás típusa') !!}
-            {!! Form::select('housetype',['0'=>'Tégla','1'=>'Panel'], '0', ['class'=>'form-control']) !!}
+            {!! Form::select('housetype',['tégla'=>'Tégla','panel'=>'Panel'], 'tégla    ', ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group col-xs-3">

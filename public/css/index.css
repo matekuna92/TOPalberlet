@@ -232,9 +232,9 @@ footer{
 
 .detailsButton
 {
-    width:100% !important; /* A main-item div padding-left:10px miatt a bal széltől behúzva jelenik meg a
-    gomb is, mint a szövegek */
-    padding-left:0px !important;
+    width:100% !important; /* A main-item div padding-left:10px miatt a bal széltől behúzva jelenik meg a gomb is, mint a szövegek */
+    padding-left:0px !important; /* Utólag a main-item-ről kilett véve a padding-left, és a h3,h4-re lett rárakva, így már nem
+                                szükséges az important... */
     border-radius:50px;
     margin-bottom:0px;
 }
@@ -251,5 +251,25 @@ footer{
     font-weight: bold;
 }
 
+/*button.detailsButton2
+{
+    width:50%;
+    float:left;
+    border-radius:50px;
+    margin-bottom:0px;
+}
+
+.detailsButton2:hover
+{
+    background-color: darkgrey;
+    color:white;
+}*/
+
+.float
+{
+    width:50% !important; /* Mivel az elemre a detailsButton érvényes, !important-tal felülírjük, rákényszerítve a kisebb
+    szélességet ... másik megoldás a fenti, egy új osztályt hozunk létre neki .. */
+    float:left !important;
+}
 
 

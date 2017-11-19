@@ -21,8 +21,9 @@ class MyPostsController extends Controller
     public function index()
     {
         //
-        $users = Auth::user();
+        //$users = Auth::user();
        // $posts = DB::table('posts')->where('user_id', auth()->id())->get(); így is működik !
+        if($users = Auth::user())
         $posts = $users->posts()->get();
         return view('myposts',compact('posts','photos','users'));
 
@@ -70,6 +71,7 @@ class MyPostsController extends Controller
     public function edit($id)
     {
         //
+        return view('edit');
     }
 
     /**
