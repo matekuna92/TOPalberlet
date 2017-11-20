@@ -151,7 +151,7 @@
 
         </div>
 
-        <div class="form-group col-xs-3">te
+        <div class="form-group col-xs-3">
             {!! Form::label('category','Kategória') !!}
             {!! Form::select('category',['ház'=>'Ház', 'lakás'=>'Lakás', 'garázs'=>'Garázs', 'telek'=>'Telek', 'iroda'=>'Iroda'],
             'ház', ['class'=>'form-control']) !!}

@@ -24,7 +24,7 @@ class MyPostsController extends Controller
         //$users = Auth::user();
        // $posts = DB::table('posts')->where('user_id', auth()->id())->get(); így is működik !
         if($users = Auth::user())
-        $posts = $users->posts()->get();
+        $posts = $users->posts()->orderBy('created_at', 'desc')->get();
         return view('myposts',compact('posts','photos','users'));
 
         /* Át kell adni a változókat a view számára, különben undefined variable errort kapunk ! */
@@ -70,8 +70,8 @@ class MyPostsController extends Controller
      */
     public function edit($id)
     {
-        //
-        return view('edit');
+        $post = Post::findOrFail($id); // megkeressük az adott posztot
+        return view('edit',compact('post')); // a fenti változónév alapján írjuk be ! ha posts, akkor itt is, különben error
     }
 
     /**
@@ -84,6 +84,18 @@ class MyPostsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $input = $request->all();
+
+        if ($file = $request->file('photo_id')) {
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file' => $name]);
+            $input['photo_id'] = $photo->id;
+        }
+
+        Auth::user()->posts()->whereId($id)->first()->update($input);
+        // we want to find the user post with same id as in update(parameter)
+        return redirect('/hirdeteseim');
 
     }
 
@@ -96,5 +108,12 @@ class MyPostsController extends Controller
     public function destroy($id)
     {
         //
+        $post = Post::findOrFail($id);
+        if(isset($post->photo->file))
+        {
+            unlink(public_path() . $post->photo->file);
+        }
+        $post->delete();
+        return redirect('/hirdeteseim');
     }
 }

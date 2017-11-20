@@ -36,7 +36,7 @@
 
     <div class="container">
 
-        <h1> A hirdetés azonosítója: {{$post->id}} </h1>
+        <h1><u> A hirdetés azonosítója:</u> <b> {{$post->id}} </b></h1>
 
         <div class="mainframe">
 

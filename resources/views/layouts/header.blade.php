@@ -23,7 +23,7 @@
                         <li><a href="/" class="nav-item"> <i class="img-responsive fa fa-home"></i> KEZDŐLAP </a></li>
                         <li><a href="/feltoltes" class="nav-item"> <i class="fa fa-upload" aria-hidden="true"></i> HIRDETÉS FELADÁS </a></li>
                         <li><a href="/hirdeteseim" class="nav-item"> <i class="fa fa-bookmark" aria-hidden="true"></i> SAJÁT HIRDETÉSEK </a></li>
-                        <li><a href="/kedvencek" class="nav-item"> <i class="fa fa-star" aria-hidden="true"></i> KEDVENCEK </a></li>
+                        <!--<li><a href="/kedvencek" class="nav-item"> <i class="fa fa-star" aria-hidden="true"></i> KEDVENCEK </a></li> -->
                         <li><a href="/regisztracio" class="nav-item"> <i class="fa fa-user" aria-hidden="true"></i> REGISZTRÁCIÓ </a></li>
 
                         @if(Auth::guest())

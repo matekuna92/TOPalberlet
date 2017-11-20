@@ -57,13 +57,23 @@
     {
         return view('myposts');
     });     A fenti megvalósítás a helyes ! Controllerben térünk vissza view-val, nem itt ! */
-
+;
     Route::resource('/feltoltes','UsersUploadController');
 
 Route::get('/post/{id}',['as'=>'post','uses'=>'UsersUploadController@showPost']);
 
 Route::get('/post/{id}/edit',['as'=>'edit','uses'=>'MyPostsController@edit']);
 
+Route::resource('/posts', 'MyPostsController');
+
+
+/* Route::get('/post/{id}/edit',['as'=>'edit','uses'=>'MyPostsController@edit']);
+
+Route::resource('/posts', 'MyPostsController');
+
+Meg kellett adni, hogy az adott resource-on a myposts kontrollert fogjuk használni, különben nem ismerte az update metódust !!!
+ Egyszerűbb ha egy resource ban megadjuk a kontrollert, és így használjuk a különböző metódusokat
+*/
 
 
 
