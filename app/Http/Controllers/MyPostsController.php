@@ -70,8 +70,8 @@ class MyPostsController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id); // megkeressük az adott posztot
-        return view('edit',compact('post')); // a fenti változónév alapján írjuk be ! ha posts, akkor itt is, különben error
+        $post = Post::findOrFail($id);                                      // megkeressük az adott posztot
+        return view('edit',compact('post'));                 // a fenti változónév alapján írjuk be ! ha posts, akkor itt is, különben error
     }
 
     /**
@@ -81,6 +81,7 @@ class MyPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         //
@@ -96,7 +97,6 @@ class MyPostsController extends Controller
         Auth::user()->posts()->whereId($id)->first()->update($input);
         // we want to find the user post with same id as in update(parameter)
         return redirect('/hirdeteseim');
-
     }
 
     /**

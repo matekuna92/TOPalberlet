@@ -11,17 +11,19 @@
 |
 */
 
-//Auth::routes();
+Auth::routes();
 
-/*Route::group(['middleware' => 'web'], function()
-{*/
-    Route::auth();
+// Route::group(['middleware' => 'web'], function() {
+  //  Route::auth();
 
     // all routes.
+
     Route::get('/', 'HomeController@index');
-    Route::post('/','HomeController@search');
+
+
+    Route::post('/', 'HomeController@search');
     Route::get('/hirdeteseim', 'MyPostsController@index');
-   // Route::get('/kereses','SearchController@search');
+    // Route::get('/kereses','SearchController@search');
 
 
     /*Route::get('/', function ()
@@ -31,13 +33,11 @@
     Mivel az itt levő futott le alapértelmezettként.... A view-t a controllerben return-öljük !!!! */
 
 // Route::get('/home', 'HomeController@index');
-    Route::get('/bejelentkezes',function()
-    {
+    Route::get('/bejelentkezes', function () {
         return view('auth/login');
     });
 
-    Route::get('/regisztracio',function()
-    {
+    Route::get('/regisztracio', function () {
         return view('auth/register');
     });
 
@@ -46,25 +46,30 @@
         return view('search');
     }); */
 
-    Route::get('/feltoltes',function()
-    {
+    Route::get('/feltoltes', function () {
         return view('upload');
     });
 
 //Route::resource('/hirdetesem', 'MyPostsController@index');i
 
-   /*Route::get('/hirdeteseim',function()
-    {
-        return view('myposts');
-    });     A fenti megvalósítás a helyes ! Controllerben térünk vissza view-val, nem itt ! */
-;
-    Route::resource('/feltoltes','UsersUploadController');
+    /*Route::get('/hirdeteseim',function()
+     {
+         return view('myposts');
+     });     A fenti megvalósítás a helyes ! Controllerben térünk vissza view-val, nem itt ! */;
+    Route::resource('/feltoltes', 'UsersUploadController');
 
-Route::get('/post/{id}',['as'=>'post','uses'=>'UsersUploadController@showPost']);
+    Route::get('/post/{id}', ['as' => 'post', 'uses' => 'UsersUploadController@showPost']);
 
-Route::get('/post/{id}/edit',['as'=>'edit','uses'=>'MyPostsController@edit']);
+    Route::get('/post/{id}/edit', ['as' => 'edit', 'uses' => 'MyPostsController@edit']);
 
-Route::resource('/posts', 'MyPostsController');
+    Route::resource('/posts', 'MyPostsController');
+
+
+   /* Route::get('/post/{id}', function ($id) {
+        return 'Post ' . $id;
+    });*/
+
+//});
 
 
 /* Route::get('/post/{id}/edit',['as'=>'edit','uses'=>'MyPostsController@edit']);

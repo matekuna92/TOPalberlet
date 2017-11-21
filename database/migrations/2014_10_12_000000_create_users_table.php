@@ -20,6 +20,17 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+
+            // Retrieve a model by its primary key
+            //$user = App\User::find(1);
+            //Retrieves the first model matching the query constraints
+            //$user = App\User::where('id',1)->first();
+
+
+            $user = App\User::create(['name'=>'New Name']);
+
+
         });
     }
 
@@ -28,6 +39,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::drop('users');

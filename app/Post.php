@@ -2,26 +2,23 @@
 
 namespace App;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+
 use Cviebrock\EloquentSluggable\Sluggable;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Photo;
 use Illuminate\Http\Request;
 
-class Post extends Model
-{
-    use Sluggable;
-    use SluggableScopeHelpers;
+    class Post extends Model
+    {
+        use Sluggable;
 
-     protected $sluggable = [
-    'build_from' => 'title',
-    'save_to' => 'slug',
-    'on_update' => true,
-     ];     // grab title every time i save it, and save it to SLUG column
-            // alapból update esetén nem működik, ezért kell az on_update true */
+        protected $sluggable = [
+        'build_from' => 'title',
+        'save_to' => 'slug',
+        'on_update' => true,
+        ];                                           // grab title every time i save it, and save it to SLUG column
+                                                    // alapból update esetén nem működik, ezért kell az on_update true */
 
     protected $fillable = [
          'photo_id', 'city', 'street', 'type', 'category', 'price',	'size',	'rooms', 'empty', 'housetype', 'heating','body'

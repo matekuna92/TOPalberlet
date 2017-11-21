@@ -24,6 +24,7 @@ class UsersUploadController extends Controller
         //
         return view('upload');
 
+
         /**
          * Show the form for creating a new resource.
          *
@@ -43,9 +44,10 @@ class UsersUploadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(ValidateUploadRequest $request)
+
     {
-       // if(Request::ajax()) { // Becuase you are uploading with ajax / dropzone
             $input = $request->all();
             $user = Auth::user();
             if ($file = $request->file('photo_id'))
@@ -58,6 +60,8 @@ class UsersUploadController extends Controller
 
             $user->posts()->create($input);
             return redirect('/');
+    }
+
            // $destinationPath = '/images';
 
            // $upload_success = Input::file('file')->move($destinationPath, $filename);
@@ -67,7 +71,7 @@ class UsersUploadController extends Controller
             //    return Response::json('error', 400);
 
            // }
-    }
+
 
         /*****************
          $input = $request->all();
@@ -149,6 +153,14 @@ class UsersUploadController extends Controller
     public function destroy($id)
     {
         //
+        $users = Auth::user();
+
+
+
+        $users = DB::table('users')->where('id', '=', 2);
+
+
+
     }
 
     public function showPost($id)
@@ -157,5 +169,4 @@ class UsersUploadController extends Controller
         // $comments = $post->comments()->whereIsActive(1)->get();
         return view('post',compact('post','user'));
     }
-
 }

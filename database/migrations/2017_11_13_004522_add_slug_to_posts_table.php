@@ -11,6 +11,7 @@ class AddSlugToPostsTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         //

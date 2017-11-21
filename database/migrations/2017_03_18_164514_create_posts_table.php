@@ -31,7 +31,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            // delete-nél a user_id lesz a kulcs, és ezt párosítjuk össze az post id-vel ....
+            // delete műveletnél a user_id lesz a kulcs, és ezt párosítjuk össze az post id-vel
         });
     }
 

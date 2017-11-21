@@ -38,14 +38,26 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
 
     /* Példa mutatorra, azonban nem használjuk */
 
-    //    public function setPasswordAttribute($password){
-//        if(!empty($password)){
-//            $this->attributes['password'] = bcrypt($password);
-//        }
-//        $this->attributes['password'] = $password;
-//    }
+
+      /*  public function setPasswordAttribute($password)
+        {
+            if(!empty($password))
+            {
+                $this->attributes['password'] = bcrypt($password);
+            }
+            $this->attributes['password'] = $password;
+        } */
 
 }

@@ -20,17 +20,25 @@ class UrlTest extends TestCase
     public function checkUrlTest()
     {
         $this   ->visit('/')
-                ->click('Bejelentkezés')
+                ->click('login') // html tag id
                 ->seePageIs('/bejelentkezes');
     }
 
     public function testUserLogin()
     {
         $this    ->visit('/bejelentkezes')
-                 ->type('testEmail','email')
-                 ->type('testPassword','password')
+                 ->type('testemail','email')
+                 ->type('testpassword','password')
                  ->check('remember')
-                 ->press('submit')
-                 ->seePageIs('/');
+                 ->press('submit');
     }
+
+    public function checkUsers()
+    {
+        $this->seeInDatabase('users',
+            [
+                'email' => 'admin@mail.com'
+            ]);
+    }
+
 }

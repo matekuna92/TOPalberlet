@@ -28,7 +28,7 @@
 
                         @if(Auth::guest())
 
-                            <li><a href="/bejelentkezes" class="nav-item"> <i class="fa fa-key" aria-hidden="true"></i> BEJELENTKEZÉS </a></li>
+                            <li><a href="/bejelentkezes" class="nav-item"> <i class="fa fa-key" aria-hidden="true" id="login"></i> BEJELENTKEZÉS </a></li>
 
                         @else
 
