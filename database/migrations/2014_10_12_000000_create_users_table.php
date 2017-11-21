@@ -27,10 +27,6 @@ class CreateUsersTable extends Migration
             //Retrieves the first model matching the query constraints
             //$user = App\User::where('id',1)->first();
 
-
-            $user = App\User::create(['name'=>'New Name']);
-
-
         });
     }
 
