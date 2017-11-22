@@ -119,7 +119,7 @@
 
     <div class="container">
 
-        <h1 class="uploaderName"> <u><b> {{ $users->name }} </b> felhasználó feltöltései </u></h1> <br>
+        <h1 class="uploaderName"> <u><b> {{ $user->name }} </b> felhasználó feltöltései </u></h1> <br>
 
     </div>
 
@@ -133,9 +133,9 @@
 
             <div class="col-md-7 main-right"> <!-- főloldalhoz hasonló elrendezés -->
 
-                @if($users->posts)          <!-- A $userst a kontrollerben definiáltuk ugyanúgy, mint a főoldalon, a posts pedig szintén a
+                @if($user->posts)          <!-- A $userst a kontrollerben definiáltuk ugyanúgy, mint a főoldalon, a posts pedig szintén a
                                         definiált változót jelenti, amely egyébként is a posts() függvényt hívja meg a User modellből -->
-                    @foreach($users->posts as $post)
+                    @foreach($user->posts as $post)
 
                         <div class="main-item img-rounded"  style="background-image: url({{$post->photo ? $post->photo->file : 'http://via.placeholder.com/300x210'}});background-size:cover;">
 

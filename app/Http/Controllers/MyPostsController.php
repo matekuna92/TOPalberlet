@@ -23,9 +23,9 @@ class MyPostsController extends Controller
         //
         //$users = Auth::user();
        // $posts = DB::table('posts')->where('user_id', auth()->id())->get(); így is működik !
-        if($users = Auth::user())
-        $posts = $users->posts()->orderBy('created_at', 'desc')->get();
-        return view('myposts',compact('posts','photos','users'));
+        if($user = Auth::user())
+        $posts = $user->posts()->orderBy('created_at', 'desc')->get();
+        return view('myposts',compact('posts','photos','user'));
 
         /* Át kell adni a változókat a view számára, különben undefined variable errort kapunk ! */
     }

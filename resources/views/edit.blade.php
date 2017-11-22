@@ -123,8 +123,13 @@
                     {!! Form::file('photo_id',['class'=>'form-control']) !!}
                 </div>
 
+            <div class="form-group col-xs-6">
+                {!! Form::label('body','Hirdetés szövege') !!}
+                {!! Form::textarea('body',null,['class'=>'form-control','rows'=>2]) !!}
+            </div>
+
                 <div class="form-group">
-                    {!! Form::submit('Hirdetés módosítása',['class'=>'btn btn-primary col-sm-6' ]) !!}
+                    {!! Form::submit('Hirdetés módosítása',['class'=>'btn btn-primary col-sm-6 editButton' ]) !!}
                 </div>
 
             {!! Form::close() !!}
@@ -134,7 +139,7 @@
             {!!Form::open(['method'=>'DELETE', 'action'=>['MyPostsController@destroy', $post->id]]) !!}
 
             <div class="form-group">
-                {!! Form::submit('Hirdetés törlése',['class'=>'btn btn-danger col-sm-6']) !!}
+                {!! Form::submit('Hirdetés törlése',['class'=>'btn btn-danger col-sm-6 deleteButton']) !!}
             </div>
 
             {!! Form::close() !!}
