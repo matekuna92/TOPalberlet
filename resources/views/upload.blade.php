@@ -180,14 +180,14 @@
 
         <div class="form-group col-xs-3">
             {!! Form::label('housetype','Lakás típusa') !!}
-            {!! Form::select('housetype',['tégla'=>'Tégla','panel'=>'Panel'], 'tégla    ', ['class'=>'form-control']) !!}
+            {!! Form::select('housetype',['tégla'=>'Tégla','panel'=>'Panel'], 'tégla', ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group col-xs-3">
 
             {!! Form::label('heating','Fűtés') !!}
-            {!! Form::select('heating',['0'=>'cirko', '1'=>'gázkonvektor', '2'=>'távfűtés', '3'=>'távfűtés egyedi méréssel',
-             '4'=>'elektromos', '5'=>'házközponti','6'=>'hátközponti egyedi méréssel','7'=>'cserépkályha'], '0',
+            {!! Form::select('heating',['cirko'=>'Cirko', 'gázkonvektor'=>'Gázkonvektor', 'távfűtés'=>'Távfűtés', 'távfűtés egyedi méréssel'=>'Távfűtés egyedi méréssel',
+             'elektromos'=>'Elektromos', 'házközponti'=>'Házközponti','házközponti egyedi méréssel'=>'Házközponti egyedi méréssel','cserépkályha'=>'Cserépkályha'], 'cirko',
             ['class'=>'form-control']) !!}
 
         </div>
@@ -224,35 +224,5 @@
 </body>
 </html>
 
-
-<!-- <div class="form-group">
-             {! Form::label(','Category') !!}
-             {! Form::select('category_id',[''=>'Choose categories'] + $categories,null,['class'=>'form-control']) !!}
-         </div> -->
-
-         <!-- <div class="form-group">
-             {! Form::label('photo_id','Kép') !!}
-             {! Form::open(array('method'=>'POST','action'=>'UsersUploadController@ store', 'files'=>true),['class'=>'dropzone']) !!}
-             {! Form::file('images[]', array('multiple'=>true)) !!}
-        </div> -->
-
-
-
-
-
-       <!-- {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
-        'files' => true, 'enctype' => 'multipart/form-data']) !!}
-        {! Form::close() !!} -->
-
-     <!-- ------   {! Form::open(['method'=>'post', 'action'=>'UsersUploadControllerstore',
-        'files' => true, 'enctype' => 'multipart/form-data']) !!} -------- -->
-
-     <!--   <div class="drop-zone">
-
-
-            {! Form::open(['method'=>'post', 'action'=>'UsersUploadController@ store',
-            'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone']) !!}
-
-            </div> -->
 
 

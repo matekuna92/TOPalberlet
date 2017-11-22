@@ -10,7 +10,8 @@
         "laravelcollective/html": "^5.3.0",
         "cviebrock/eloquent-sluggable": "4.1",
         "rtconner/laravel-likeable": "~1.2",
-        "christiankuri/laravel-favorite": "^1.2"
+        "christiankuri/laravel-favorite": "^1.2",
+        "martinbean/laravel-sluggable-trait": "^0.3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

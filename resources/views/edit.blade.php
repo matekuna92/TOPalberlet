@@ -116,7 +116,9 @@
              'elektromos'=>'elektromos', 'házközponti'=>'házközponti','házközponti egyedi méréssel'=>'házközponti egyedi méréssel','cserépkályha'=>'cserépkályha'], null,
             ['class'=>'form-control']) !!}
 
-                <div class="form-group">
+            </div>
+
+                <div class="form-group col-xs-6">
                     {!! Form::label('photo_id','Kép feltöltése') !!}
                     {!! Form::file('photo_id',['class'=>'form-control']) !!}
                 </div>
@@ -138,10 +140,9 @@
             {!! Form::close() !!}
 
         </div>
-    </div>
 
 </div>
-</div>
+
 
 @include('layouts.footer')
 

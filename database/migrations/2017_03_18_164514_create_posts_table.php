@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('category');
             $table->integer('price')->unsigned()->index();
             $table->integer('size')->unsigned()->index();
-            $table->integer('rooms')->unsigned()->index();
+            $table->float('rooms')->unsigned()->index();
             $table->string('empty');
             $table->string('housetype');
             $table->string('heating');

@@ -46,8 +46,8 @@
 
             <div class="textframe">
 
-            <h5> {{$post->body}} </h5>
-            <h5> Város: {{$post->city}} </h5>
+            <h5 class="list-group-item" style="color:black !important;background-color: lightgrey;"> {{$post->body}} </h5>
+            <h5 class="list-group-item" style="color:black !important;background-color: lightgrey;"> <u> Város:</u> {{$post->city}} </h5>
 
             <ul class="list">
 
@@ -65,10 +65,10 @@
             <!-- Feltöltő: <a href="#"> {$post->user()->name}} </a> -->
             </div>
 
-            <a href="/"> <button class="backToMain"> Vissza a főoldalra </button> </a>
-            <a href="/hirdeteseim"> <button class="backToMain"> Vissza a hirdetéseimhez </button> </a>
-
         </div>
+
+        <a href="/"> <button class="backToMain btn btn-danger"> Vissza a főoldalra </button> </a>
+        <a href="/hirdeteseim"> <button class="backToMain btn btn-primary"> Vissza a hirdetéseimhez </button> </a>
 
 </div>
 

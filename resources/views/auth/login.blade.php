@@ -21,12 +21,6 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-<!-- BX SLIDER -->
-<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-
-<!-- Animate -->
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-
 <!-- Responsive -->
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
@@ -102,3 +96,5 @@
     </div>
 </div>
 @endsection
+
+@include('layouts.footer')

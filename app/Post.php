@@ -2,8 +2,6 @@
 
 namespace App;
 
-
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Photo;
@@ -11,9 +9,9 @@ use Illuminate\Http\Request;
 
     class Post extends Model
     {
-        use Sluggable;
+        // use Sluggable;
 
-        protected $sluggable = [
+        /*protected $sluggable = [
         'build_from' => 'title',
         'save_to' => 'slug',
         'on_update' => true,
@@ -25,14 +23,14 @@ use Illuminate\Http\Request;
     //'id', 'user_id',
     ];
 
-    public function sluggable()
+   /* public function sluggable()
     {
         return [
             'slug' => [
                 'source' => 'title' // title oszlopból pullolja az urlt...  ezt tárolja a slug-column ben
             ]
         ];
-    }
+    }*/
 
     public function user()
     {

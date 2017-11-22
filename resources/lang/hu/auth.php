@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Nem található ilyen felhasználónév - jelszó páros az adatbázisban.',
+    'failed' => 'Nem található ilyen e-mail - jelszó páros az adatbázisban.',
     'throttle' => 'Túl sok sikertelen bejelentkezés. Kérjük próbálja meg :seconds másodperc múlva.',
 
 ];
