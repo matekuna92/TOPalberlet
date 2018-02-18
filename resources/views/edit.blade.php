@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: M3talc0re
@@ -125,7 +125,7 @@
 
             <div class="form-group col-xs-6">
                 {!! Form::label('body','Hirdetés szövege') !!}
-                {!! Form::textarea('body',null,['class'=>'form-control','rows'=>2]) !!}
+                {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
             </div>
 
                 <div class="form-group">

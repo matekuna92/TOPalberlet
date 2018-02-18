@@ -1,4 +1,4 @@
-@include('layouts.app')
+﻿@include('layouts.app')
 
         <!DOCTYPE html>
 
@@ -195,7 +195,7 @@
 
         <div class="form-group col-xs-6">
             {!! Form::label('body','Hirdetés szövege') !!}
-            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>2]) !!}
+            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
         </div>
 
         <div class="clear"></div>

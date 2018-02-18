@@ -27,8 +27,13 @@ class MyPostsController extends Controller
         $posts = $user->posts()->orderBy('created_at', 'desc')->get();
         return view('myposts',compact('posts','photos','user'));
 
-        /* Át kell adni a változókat a view számára, különben undefined variable errort kapunk ! */
-    }
+    }                           /* Át kell adni a változókat a view számára, különben undefined variable errort kapunk ! */
+
+                                /* $users = DB::select('select * from users where id = ?', [2]);
+                                return view('users.index', ['users'=>$users]); */
+
+
+
 
     /**
      * Show the form for creating a new resource.

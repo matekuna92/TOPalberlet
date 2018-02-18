@@ -46,20 +46,20 @@
 
             <div class="textframe">
 
-            <h5 class="list-group-item" style="color:black !important;background-color: lightgrey;"> {{$post->body}} </h5>
-            <h5 class="list-group-item" style="color:black !important;background-color: lightgrey;"> <u> Város:</u> {{$post->city}} </h5>
+            <h5 class="list-group-item post-body"> {{$post->body}} </h5>
+            <h5 class="list-group-item post-city"> <u> Város:</u> {{$post->city}} </h5>
 
             <ul class="list">
 
-                <li><h5> Utca: {{$post->street}} </h5></li>
-                <li><h5>  Típus: {{$post->type}} </h5></li>
-                <li><h5>  Kategória: {{$post->category}} </h5></li>
-                <li><h5>  Ár: {{$post->price}} Ft </h5></li>
-                <li><h5>  Méret: {{$post->size}} m2 </h5></li>
-                <li><h5>  Szobák száma: {{$post->rooms}} </h5></li>
-                <li><h5>  Bútorok: {{$post->empty}} </h5></li>
-                <li><h5>  Lakás típusa: {{$post->housetype}} </h5></li>
-                <li><h5>  Fűtés: {{$post->heating}} </h5></li>
+                <li class="li-items"> <h5> Utca: {{$post->street}} </h5></li>
+                <li class="li-items"> <h5>  Típus: {{$post->type}} </h5></li>
+                <li class="li-items"> <h5>  Kategória: {{$post->category}} </h5></li>
+                <li class="li-items"> <h5>  Ár: {{$post->price}} Ft </h5></li>
+                <li class="li-items"> <h5>  Méret: {{$post->size}} m2 </h5></li>
+                <li class="li-items"> <h5>  Szobák száma: {{$post->rooms}} </h5></li>
+                <li class="li-items"> <h5>  Bútorok: {{$post->empty}} </h5></li>
+                <li class="li-items"> <h5>  Lakás típusa: {{$post->housetype}} </h5></li>
+                <li class="li-items"> <h5>  Fűtés: {{$post->heating}} </h5></li>
 
             </ul>
             <!-- Feltöltő: <a href="#"> {$post->user()->name}} </a> -->

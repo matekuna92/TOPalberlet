@@ -25,9 +25,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-    <script src="js/jquery-3.2.1.min.js"> </script>
-
-
 </head>
 
 
@@ -132,15 +129,15 @@
     /* Testing, if jQuery working after site loading */
     /*$( document ).ready(function() {
         console.log( "ready!" );
-    });*/
+    });
 
     $( document ).ready(function()
     {
         $(".detalisButton").hover = function ()
         {
-            $this.style.backgroundColor = "darkgrey"; /* Not working */
+            $this.style.backgroundColor = "darkgrey"; /* Not working
         }
-    })
+    })      */
 
 
 </script>

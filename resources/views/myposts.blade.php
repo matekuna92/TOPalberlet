@@ -155,27 +155,24 @@
                         </div> <!-- eredetileg a div-en belül volt a foreach, úgy egymás alatt jelent meg a div-et nem nézve !!!-->
                     @endforeach
 
-            </div>
-        </div>
-    </div>
+                    @else
 
-                @else
+                        <div class="container">
 
-                    <h2> Ez a felhasználó még nem töltött fel hirdetéseket! </h2>
-
-                @endif
+                            <h2> Ez a felhasználó még nem töltött fel hirdetéseket! </h2>
 
                         </div>
 
-             </div>
+                    @endif
 
             </div>
+
 
         </div>
 
     </div>
 
-    @endif
+@endif
 
     @include('layouts.footer');
 
