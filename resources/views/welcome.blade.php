@@ -72,6 +72,8 @@
                         <input type="text" class="form-control col-xs-4" id="formGroupExampleInput2" placeholder="Max" name="maxprice">
                         </div>
 
+                    </div>
+
                     <div class="form-group">
                         <label for="maxrooms" class="maxrooms"> Max szobák száma </label>
                         <input class="form-control" id="maxrooms" name="maxrooms" rows="3" placeholder="Max. szobák száma">  </input>
@@ -79,7 +81,7 @@
 
                     <button type="submit" class="btn btn-primary"> Keresés </button>
 
-                    </div>
+
 
                {!! Form::close() !!}
               <!--  </form> -->
