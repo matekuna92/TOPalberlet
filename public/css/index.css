@@ -251,8 +251,8 @@ footer{
 
 .detailsButton:hover
 {
-    background-color: darkgrey;
-    color:white;
+    background-color:#696969;
+    transition:0.5s;
 }
 
 .detalisLink
@@ -356,5 +356,13 @@ footer{
         font-size: 10px;
         text-align: center;
     }
+
+    #parallax
+    {
+        text-align: center;
+        background: url('../images/sliderimg.jpg') center repeat fixed;
+        background-size: cover;
+    }
+
 }
 

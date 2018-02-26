@@ -37,7 +37,7 @@
 
 </div>
 
-        <div class="jumbotron">
+        <div class="jumbotron" id="parallax" data-type="background" data-speed="4">
             <h1 class="jumb-h1"> TOP albérlet </h1>
             <p class="jumb-p"> Válasszon a legjobb ajánlatok közül ! </p>
         </div>
