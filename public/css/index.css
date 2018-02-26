@@ -85,6 +85,7 @@ ul
     /*background-color: #e0dede;*/
     background-color:#696969;
     transition:0.5s;
+    color:white;
 }
 
 .navbar-default .navbar-nav > li > a.nav-item:hover
