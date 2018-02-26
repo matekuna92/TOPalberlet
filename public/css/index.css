@@ -360,7 +360,7 @@ footer{
     #parallax
     {
         text-align: center;
-        background: url('../images/sliderimg.jpg') center repeat fixed;
+        background: url('../images/sliderimg.jpg') no-repeat center center;
         background-size: cover;
     }
 
