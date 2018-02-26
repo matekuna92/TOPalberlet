@@ -352,15 +352,14 @@ footer{
         height: 225px;
     }
 
-    footer{
+    footer {
         font-size: 10px;
         text-align: center;
     }
 
-    #parallax
-    {
+    #parallax {
         text-align: center;
-        background: url('../images/sliderimg.jpg') no-repeat center center;
+        background: url('../images/sliderimg.jpg') no-repeat 50% 10%;
         background-size: cover;
         color:white;
     }
