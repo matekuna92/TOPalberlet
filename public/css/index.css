@@ -364,5 +364,9 @@ footer{
         color:white;
     }
 
+    label.maxrooms {
+        margin-top:15px;
+    }
+
 }
 
