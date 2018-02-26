@@ -333,6 +333,20 @@ footer{
     margin-bottom: 230px;
 }
 
+
+#parallax {
+    text-align: center;
+    background: url('../images/sliderimg.jpg') no-repeat 50% 10%;
+    background-size: cover;
+    color:white;
+}
+
+label.maxrooms {
+    margin-top:15px;
+}
+
+/*********** MEDIA SCREEN ***************/
+
 @media screen and (max-width:375px) {
     .col-md-3 {
         width: 70% !important;
@@ -357,17 +371,5 @@ footer{
         font-size: 10px;
         text-align: center;
     }
-
-    #parallax {
-        text-align: center;
-        background: url('../images/sliderimg.jpg') no-repeat 50% 10%;
-        background-size: cover;
-        color:white;
-    }
-
-    label.maxrooms {
-        margin-top:15px;
-    }
-
 }
 
