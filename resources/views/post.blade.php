@@ -16,8 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
     <!-- Font Awesome -->
